@@ -1,0 +1,123 @@
+.header
+    padding-top: 10px
+    min-height: 70px
+    padding-bottom: 10px
+    box-shadow: 0 0 15px 0 rgba(40, 40, 40, .2)
+    background-color: #F2F2F2
+    // z-index: 999
+    &__wrapper
+        width: 100%
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__logo
+        width: 60px
+    &__top-text
+        font-size: 25px
+    &__nav  
+        flex-basis: 50%
+    &__list
+        display: flex
+        justify-content: space-between
+    &__item
+        align-items: center
+    &__link
+        color: $black
+    &__button
+        color: $black
+        padding: 8px 14px
+        border: 2px solid #1d7aa7
+        border-radius: 10px
+        font-family: "Roboto Condensed", sans-serif
+        font-size: 18px
+        display: inline-block
+
+.logo
+    &__img
+        display: block
+    &__pic
+        max-width: 100%
+   
+
+.banner
+    &__wrapper
+        min-height: 480px
+        background-image: url(../img/bg-1.jpg)
+        background-size: cover
+        overflow: hidden
+        z-index: 0
+    &__text
+        margin-top: 250px
+    &__title
+        color: $text
+        font-size: 50px
+    &__subtitle
+        color: $text
+        font-size: 21px
+
+.about
+    padding-top: 60px
+    padding-bottom: 60px
+    background-color: #f0f0f0
+    &__title
+        font-size: 40px
+        color: $black
+        text-align: center
+        margin-bottom: 30px
+    &__description
+        font-size: 18px
+        color: $black
+
+.benefits
+    padding-top: 60px
+    padding-bottom: 60px
+    border-bottom: 1px solid #ccc
+    &__title
+        color: $black
+        font-size: 40px
+        text-align: center
+        margin-bottom: 30px
+    &__item
+        display: flex
+        flex-direction: column
+        justify-content: center
+    &__img
+        align-self: center
+    &__main
+        font-size: 18px
+        font-weight: 
+        text-align: center
+        margin-top: 15px
+    &__item-text
+        margin: 15px 0 15px
+    
+.options
+    padding-top: 60px
+    padding-bottom: 60px
+    &__title
+        font-size: 40px
+        text-align: center
+        margin-bottom: 30px
+    &__img  
+        background-image: url(../img/office__benefit.png)
+        width: 132px
+        height: 132px
+        margin: auto
+        margin-bottom: 25px
+    &__phone    
+        background-position: 0 0
+    &__phone
+        background-position: 0 -135px
+    &__shield
+        background-position: 0 -270px
+    &__items
+        margin-bottom: 10px
+        &:before
+            content: "+"
+            color: #86ce66
+            margin-right: 5px
+            font-weight: 700
+
+.container-custom
+    max-width: 1700px
+    margin: 0 auto
