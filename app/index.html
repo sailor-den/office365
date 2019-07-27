@@ -336,7 +336,7 @@
 				</div>
 			</section>
 
-			<section class="cost">
+			<section class="cost-ob">
 				<div class="container-custom">
 					<div class="calc__wrapper">
 						<h2 class="calc__title">Рассчитать стоймость обслуживания</h2>
@@ -386,11 +386,13 @@
 												<div class="price-block__ob-price">100<span>p/мес.</span></div>
 												<div class="price-block__ob-price">200<span>p/мес.</span></div>
 												<div class="price-block__ob-price">300<span>p/мес.</span></div>
+												<div class="price-block__ob-price"><span>Итог:</span></div>
 											</div>
 											<div class="price-block__ob">
 													<div class="price-block__ob-header">Общая стоимость в месяц</div>
 												<div class="price-block__ob-price">500<span>p/мес.</span></div>
 												<div class="price-block__ob-price">600<span>p/мес.</span></div>
+												<div class="price-block__ob-price">900<span>p/мес.</span></div>
 												<div class="price-block__ob-price">900<span>p/мес.</span></div>
 											</div>
 										</div>
@@ -477,14 +479,25 @@
 								<div class="row">
 									<div class="col-md-3">
 										<div class="includes">
-										<div class="includes__title">
-											Услуги, включенные в тариф
+										<div class="checkbox-container">
+											<input class="material-switcher calc__activator_display-phone" id="material-switcher-phone" type="checkbox">
+											<label aria-label="Switcher" class="material-switcher__label calc__activator_display-phone" for="material-switcher-phone"></label>
+											<label aria-label="Switcher" class="calc__switcher calc__activator_display-phone" for="material-switcher-phone">Дополнительные услуги</label>
 										</div>
+										<!-- <div class="includes__title">
+											Услуги, включенные в тариф
+										</div> -->
 										<div class="includes__item">Внедрение</div>
 										<div class="includes__item">Миграция</div>
 										<div class="includes__item">Обучение </div>
 										<div class="includes__item">Поддержка </div>
 									</div>
+									</div>
+									<div class="col-md-3">
+										<div class="cost-extra">
+											<div class="price-block__ob-price"><span>Итог:</span></div>
+											<div class="price-block__ob-price">900<span>p/мес.</span></div>
+										</div>
 									</div>
 								</div>
 
