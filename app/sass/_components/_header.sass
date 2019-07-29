@@ -15,14 +15,40 @@
     &__top-text
         font-size: 25px
     &__nav  
-        flex-basis: 50%
+        flex-basis: 66%
     &__list
         display: flex
         justify-content: space-between
     &__item
         align-items: center
+        margin-left: 40px
     &__link
         color: $black
+        text-transform: uppercase
+        position: relative
+        padding: 5px 0
+        &:hover
+            text-decoration: none
+            color: $black
+            opacity: .8
+        &::before, &::after
+            content: ''
+            position: absolute
+            width: 100%
+            height: 2px
+            background-color: #1d7aa7
+            left: 0
+            transform: scaleX(0)
+            transition: all .5s
+        &::before
+            top: 0
+            transform-origin: right
+        &::after
+            bottom: 0
+            transform-origin: left
+        &:hover::before, &:hover::after
+            transform: scaleX(1)
+            
     &__button
         color: $black
         padding: 8px 14px
@@ -241,7 +267,7 @@
     margin-right: 15px
 
 hr 
-    width: 800px
+    width: 966px
 
 .cost-extra
     display: flex
