@@ -47,8 +47,7 @@
             bottom: 0
             transform-origin: left
         &:hover::before, &:hover::after
-            transform: scaleX(1)
-            
+            transform: scaleX(1) 
     &__button
         color: $black
         padding: 8px 14px
@@ -57,6 +56,11 @@
         font-family: "Roboto Condensed", sans-serif
         font-size: 18px
         display: inline-block
+        &:hover
+            text-decoration: none
+            color: $black
+            opacity: .8
+            transition: all .3s ease-in-out
 
 .logo
     &__img
@@ -72,6 +76,8 @@
         background-size: cover
         overflow: hidden
         z-index: 0
+        transform-style: inherit
+        width: 100vw
     &__text
         margin-top: 250px
     &__title
