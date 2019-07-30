@@ -1,4 +1,5 @@
 $(document).ready(function($){
+
     $(window).scroll(function(){
         let st = $(this).scrollTop();
     
@@ -105,6 +106,19 @@ $(document).ready(function($){
         scan_n_set ();
     });
 
+
+    $(".calc__activator_display-phone").on("click", function() {
+        grandma = $(this).parents();
+        if ($(this).prop("checked")) {
+            grandma.find(".cost-phone-container").removeClass("disabled");
+        } else {
+            grandma.find(".cost-phone-container").addClass("disabled");
+        }
+        // calculator();
+        // scan_n_set ();
+    });
+
+
     function scan_n_set () {
         if($("#js-calc_val_0").val()){
             var num_comps = parseInt($("#js-calc_val_0").val())
@@ -178,5 +192,7 @@ $(document).ready(function($){
         // jQuery("#num_rols_pdf").val(num_rols)
         
     };
+
+    
 
 });
