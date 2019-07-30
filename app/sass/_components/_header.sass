@@ -302,3 +302,49 @@ hr
 
 .footer 
     border-top: 1px solid #aeaeae
+
+.top 
+    position: fixed
+    bottom: 25px
+    right: -100px
+    background-color: $accent
+    z-index: 12
+    border-radius: 10em
+    width: 50px
+    height: 50px
+    text-align: center
+    color: $black
+    line-height: 56px
+    cursor: pointer
+    transition: all .3s ease
+    // opacity: .5
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.5)
+    &:hover
+        opacity: .9
+
+.top--active 
+    right: 25px
+
+label
+    color: $black
+
+.modal-title
+    color: $black
+    font-weight: 400
+
+.close
+    &:active, &:focus
+        outline: none
+
+.btn-success
+    background-color: #1d7aa7
+    &:hover
+        background-color: #0069d9
+        // opacity: .9
+    &:active, &:focus
+        outline: none
+        border-color: #0069d9
+        background-color: #0069d9
+
+#answer
+    color: $black
