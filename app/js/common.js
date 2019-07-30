@@ -134,25 +134,25 @@ $(document).ready(function($){
         //     var video_server_price = 0;
         //     jQuery("#video_server_pdf").val(0);
         //     }
-        if ($("#material-switcher-phone").attr('checked') == 'checked'){
-            var voip_server_price = 5000;
-            // jQuery("#voip_server_pdf").val(1);
-        } else {
-            var voip_server_price = 0;
-            // jQuery("#voip_server_pdf").val(0);
-            }
+        // if ($("#material-switcher-phone").attr('checked') == 'checked'){
+        //     var voip_server_price = 5000;
+        //     // jQuery("#voip_server_pdf").val(1);
+        // } else {
+        //     var voip_server_price = 0;
+        //     // jQuery("#voip_server_pdf").val(0);
+        //     }
 
 
-        if ($("#material-switcher").attr('checked') == 'checked'){
+        // if ($("#material-switcher").attr('checked') == 'checked'){
             var price_comps = num_comps*price_comp
             var price_servers = num_servers*price_server
             var price_virt_servers = num_virt_servers*price_virt_server
             var total_price_comps = price_comps+price_servers+price_virt_servers
             
-        } else {
-            var total_price_comps = 0
-            // jQuery("#voip_server_pdf").val(0);
-            }
+        // } else {
+        //     var total_price_comps = 0
+        //     // jQuery("#voip_server_pdf").val(0);
+        //     }
 
         
         
@@ -161,7 +161,12 @@ $(document).ready(function($){
         
         
         
-        var total_price_all = total_price_comps+voip_server_price
+        // var total_price_all = total_price_comps+voip_server_price
+
+        $('#price-obe').text(price_comps + " p/мес.")
+        $('#price-ob').text(price_servers + " p/мес.")
+        $('#price-obp').text(price_virt_servers + " p/мес.")
+        $('#price-total').text(total_price_comps + " p/мес.")
                 
         $("#total_price-comp").text(total_price_comps)
         $("#total_price-phone").text(voip_server_price)
