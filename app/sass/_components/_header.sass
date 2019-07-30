@@ -4,7 +4,10 @@
     padding-bottom: 10px
     box-shadow: 0 0 15px 0 rgba(40, 40, 40, .2)
     background-color: #F2F2F2
-    // z-index: 999
+    position: fixed
+    width: 100%
+    transition: all 0.2s ease-in-out
+    z-index: 999
     &__wrapper
         width: 100%
         display: flex
@@ -71,6 +74,7 @@
 
 .banner
     &__wrapper
+        margin-top: 80px
         min-height: 480px
         background-image: url(../img/bg-1.jpg)
         background-size: cover
@@ -88,8 +92,8 @@
         font-size: 21px
 
 .about
-    padding-top: 60px
-    padding-bottom: 60px
+    padding-top: 100px
+    padding-bottom: 80px
     background-color: #f0f0f0
     // border-bottom: 1px solid #aeaeae
     &__title
@@ -102,8 +106,8 @@
         color: $black
 
 .benefits
-    padding-top: 60px
-    padding-bottom: 60px
+    padding-top: 100px
+    padding-bottom: 80px
     // border-bottom: 1px solid #ccc
     &__title
         color: $black
@@ -125,8 +129,8 @@
         margin: 15px 0 15px
     
 .options
-    padding-top: 60px
-    padding-bottom: 60px
+    padding-top: 100px
+    padding-bottom: 80px
     // border-bottom: 1px solid #aeaeae
     &__title
         font-size: 40px
@@ -153,8 +157,8 @@
             font-weight: 700
 
 .products
-    padding-top: 60px
-    padding-bottom: 60px
+    padding-top: 100px
+    padding-bottom: 80px
     // border-bottom: 1px solid #aeaeae
     background-color: #f0f0f0
     &__item
@@ -219,7 +223,7 @@
 
 .requirements
     // border-bottom: 1px solid #aeaeae
-    padding: 60px 0 60px
+    padding: 100px 0 80px
     &__title
         font-size: 40px
         margin-bottom: 30px
@@ -233,8 +237,8 @@
         margin-bottom: 10px
 
 .cost-ob
-    padding-top: 60px
-    padding-bottom: 60px
+    padding-top: 80px
+    padding-bottom: 80px
     font-size: 30px
     font-weight: 300
     color: $black
@@ -348,3 +352,8 @@ label
 
 #answer
     color: $black
+
+.scrolled
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.4)
+    // background: #1d282c
+    background-color: #dfe6ed
