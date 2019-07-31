@@ -107,15 +107,27 @@ $(document).ready(function($){
     });
 
 
-    $(".calc__activator_display-phone").on("click", function() {
-        grandma = $(this).parents();
+    // $(".calc__activator_display-phone").on("click", function() {
+    //     grandma = $(this).parents();
+    //     if ($(this).prop("checked")) {
+    //         grandma.find(".cost-phone-container").removeClass("disabled");
+    //     } else {
+    //         grandma.find(".cost-phone-container").addClass("disabled");
+    //     }
+    //     calculator();
+    //     scan_n_set ();
+    //     $(this).attr("checked");
+        
+    // });
+
+    $(".calc__activator_display-phone").on("click", function(){
+        let priceSupport = 2000
+        // grandma = $(this).parents();
         if ($(this).prop("checked")) {
-            grandma.find(".cost-phone-container").removeClass("disabled");
+            $('#price-support').text(priceSupport + " p/мес.")
         } else {
-            grandma.find(".cost-phone-container").addClass("disabled");
+            $('#price-support').text("0 p/мес.")
         }
-        // calculator();
-        // scan_n_set ();
     });
 
 
@@ -142,7 +154,7 @@ $(document).ready(function($){
         var price_virt_server = 300
 
         // if (jQuery("#1onoffswitch").attr('checked')=='checked'){
-        //     var video_server_price = 2000;
+            // var video_server_price = 2000;
         //     jQuery("#video_server_pdf").val(1);
         // } else {
         //     var video_server_price = 0;
