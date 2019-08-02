@@ -30,43 +30,147 @@
 
 
 
-.material-switcher-office 
-	display: none
+// .material-switcher-office 
+// 	display: none
 
-.material-switcher__label-office 
-	position: relative
-	cursor: pointer
-	display: block
-	height: 20px
-	width: 35px
-	background-color: #BBBABD
-	border-radius: 30px // Значение равно высоте полоски
-	transition: .3s all ease-in-out // Небольшая анимация
+// .material-switcher__label-office 
+// 	position: relative
+// 	cursor: pointer
+// 	display: block
+// 	height: 20px
+// 	width: 35px
+// 	background-color: #BBBABD
+// 	border-radius: 30px // Значение равно высоте полоски
+// 	transition: .3s all ease-in-out // Небольшая анимация
 
-.material-switcher__label-office::before
-	position: absolute
-	content: ''
-	top: calc(50% - 8px) // 12px - половина высоты свитчера
-	left: 6%
-	height: 16px
-	width: 16px
-	background-color: #FFF
-	border-radius: 24px // Значение равно высоте блока
-	transition: .3s all ease-in-out // Небольшая анимация
+// .material-switcher__label-office::before
+// 	position: absolute
+// 	content: ''
+// 	top: calc(50% - 8px) // 12px - половина высоты свитчера
+// 	left: 6%
+// 	height: 16px
+// 	width: 16px
+// 	background-color: #FFF
+// 	border-radius: 24px // Значение равно высоте блока
+// 	transition: .3s all ease-in-out // Небольшая анимация
 
-.material-switcher-office:checked + .material-switcher__label-office::before 
-	transform: translate(85%) // Перемещение свитчера в активном состоянии
+// .material-switcher-office:checked + .material-switcher__label-office::before 
+// 	transform: translate(85%) // Перемещение свитчера в активном состоянии
 
-.material-switcher-office:checked + .material-switcher__label-office 
-	background-color: $accent // Перекраска полоски
+// .material-switcher-office:checked + .material-switcher__label-office 
+// 	background-color: $accent // Перекраска полоски
 
 
 
+
+// [type='range'] 
+//     -webkit-appearance: none
+//     margin: 9px 0
+//     width: 100%
+
+
+// [type='range']:focus 
+//     outline: 0
+
+
+// [type='range']:focus::-webkit-slider-runnable-track 
+//     background: #e8edf0
+
+
+// [type='range']:focus::-ms-fill-lower 
+//     background: #e8edf0
+
+
+// [type='range']:focus::-ms-fill-upper 
+//     background: #e8edf0
+
+
+// [type='range']::-webkit-slider-runnable-track 
+//     cursor: pointer
+//     height: 10px
+//     transition: all 0.2s ease
+//     width: 100%
+//     box-shadow: inset 0 1px 1px #cdd9e1
+//     background: #e8edf0
+//     border: 2px solid trasparent
+//     border-radius: 5px
+
+
+// [type='range']::-webkit-slider-thumb
+//     box-shadow: 0 2px 5px rgba(0,0,0,0.1)
+//     background: $accent
+//     border: 0px solid #eceff1
+//     border-radius: 12px
+//     cursor: pointer
+//     height: 18px
+//     width: 18px
+//     -webkit-appearance: none
+//     margin-top: -4px
+
+
+// [type='range']::-moz-range-track 
+//     cursor: pointer
+//     height: 10px
+//     transition: all 0.2s ease
+//     width: 100%
+//     box-shadow: inset 0 1px 1px #cdd9e1
+//     background: #e8edf0
+//     border: 2px solid trasparent
+//     border-radius: 5px
+
+
+// [type='range']::-moz-range-thumb 
+//     box-shadow: 0 2px 5px rgba(0,0,0,0.1)
+//     background: $accent
+//     border: 0px solid #eceff1
+//     border-radius: 12px
+//     cursor: pointer
+//     height: 18px
+//     width: 18px
+
+
+// [type='range']::-ms-track 
+//     cursor: pointer
+//     height: 10px
+//     transition: all 0.2s ease
+//     width: 100%
+//     background: transparent
+//     border-color: transparent
+//     border-width: 9px 0
+//     color: transparent
+
+
+// [type='range']::-ms-fill-lower 
+//     box-shadow: inset 0 1px 1px #cdd9e1
+//     background: #e8edf0
+//     border: 2px solid trasparent
+//     border-radius: 10px
+
+
+// [type='range']::-ms-fill-upper 
+//     box-shadow: inset 0 1px 1px #cdd9e1
+//     background: #e8edf0
+//     border: 2px solid trasparent
+//     border-radius: 10px
+
+
+// [type='range']::-ms-thumb 
+//     box-shadow: 0 2px 5px rgba(0,0,0,0.1)
+//     background: #4ea4cb
+//     border: 0px solid #eceff1
+//     border-radius: 12px
+//     cursor: pointer
+//     height: 18px
+//     width: 18px
+//     margin-top: 0
+
+    
 
 [type='range'] 
     -webkit-appearance: none
     margin: 9px 0
     width: 100%
+    height: 9px
 
 
 [type='range']:focus 
@@ -90,15 +194,15 @@
     height: 10px
     transition: all 0.2s ease
     width: 100%
-    box-shadow: inset 0 1px 1px #cdd9e1
+    box-shadow: inset 0 1px 5px #cdd9e1
     background: #e8edf0
     border: 2px solid trasparent
     border-radius: 5px
 
 
-[type='range']::-webkit-slider-thumb
+[type='range']::-webkit-slider-thumb 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1)
-    background: $accent
+    background: #4ea4cb
     border: 0px solid #eceff1
     border-radius: 12px
     cursor: pointer
@@ -113,7 +217,7 @@
     height: 10px
     transition: all 0.2s ease
     width: 100%
-    box-shadow: inset 0 1px 1px #cdd9e1
+    box-shadow: inset 0 1px 5px #cdd9e1
     background: #e8edf0
     border: 2px solid trasparent
     border-radius: 5px
@@ -121,7 +225,7 @@
 
 [type='range']::-moz-range-thumb 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1)
-    background: $accent
+    background: #4ea4cb
     border: 0px solid #eceff1
     border-radius: 12px
     cursor: pointer
@@ -164,4 +268,3 @@
     width: 18px
     margin-top: 0
 
-    
