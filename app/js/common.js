@@ -1,5 +1,13 @@
 $(document).ready(function($){
 
+    var user = detect.parse(navigator.userAgent);
+    console.log(user.browser.family);
+
+    if (user.browser.family === "IE" || "Edge") {
+        document.write('Please change browser on Chrome, Firefox or Opera. Not IE and Edge.')
+        // alert('Please change browser');   
+      }
+
     $(window).scroll(function(){
         let st = $(this).scrollTop();
     

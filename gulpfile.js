@@ -44,6 +44,7 @@ gulp.task('scripts', function() {
 		'app/libs/PageScroll2id/jquery.malihu.PageScroll2id.min.js',
 		'app/libs/bootstrap-4.3.1/js/bootstrap.min.js',
 		'app/libs/maskedinput/jquery.maskedinput.min.js',
+		'app/libs/detect/detect.min.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
