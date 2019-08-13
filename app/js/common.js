@@ -132,9 +132,9 @@ $(document).ready(function($){
         let priceSupport = 2000
         // grandma = $(this).parents();
         if ($(this).prop("checked")) {
-            $('#price-support').text(priceSupport + " p/мес.")
+            $('#price-support').text(priceSupport + " p")
         } else {
-            $('#price-support').text("0 p/мес.")
+            $('#price-support').text("0 p")
         }
     });
 
