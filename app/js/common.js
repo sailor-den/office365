@@ -128,6 +128,17 @@ $(document).ready(function($){
         
     // });
 
+    $("#calc__switcher-setup").on("click", function(){
+        let priceSetup = 50
+        // grandma = $(this).parents();
+        // if ($(this).prop("checked")) {
+        //     $('#price-support').text(priceSupport + " p")
+        // } else {
+        //     $('#price-support').text("0 p")
+        // }
+        
+    });
+
     $(".calc__activator_display-phone").on("click", function(){
         let priceSupport = 2000
         // grandma = $(this).parents();
