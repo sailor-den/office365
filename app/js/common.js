@@ -128,14 +128,18 @@ $(document).ready(function($){
         
     // });
 
-    $("#calc__switcher-setup").on("click", function(){
-        let priceSetup = 50
-        if ($(this).prop("checked")) {
-            $('').text(priceSetup + " p")
-        } else {
-            $('').text("0 p")
-        }
+    scan_n_set ();
 
+    $("#calc__switcher-setup").on("click", function(){
+        
+        
+        // let priceSetupTotal = priceSetupTotal * 50
+        if ($(this).prop("checked")) {
+            $('.ob-price-result').text(priceSetup + " p")
+        } else {
+            $('.ob-price-result').text("0 p")
+        }
+        // scan_n_set ();
     });
 
     $(".calc__activator_display-phone").on("click", function(){
@@ -188,6 +192,8 @@ $(document).ready(function($){
 
 
         // if ($("#material-switcher").attr('checked') == 'checked'){
+            let priceSetup = num_comps + num_servers + num_virt_servers
+
             var price_comps = num_comps*price_comp
             var price_servers = num_servers*price_server
             var price_virt_servers = num_virt_servers*price_virt_server
@@ -203,7 +209,7 @@ $(document).ready(function($){
         // var hours_vizit = Math.ceil(num_comps/5)*num_vizits
         // var price_vizits = hours_vizit*price_vizit
         
-        
+        $('.license__count').text(priceSetup)
         
         // var total_price_all = total_price_comps+voip_server_price
 
@@ -213,8 +219,8 @@ $(document).ready(function($){
         $('#price-total').text(total_price_comps + " p/мес.")
                 
         $("#total_price-comp").text(total_price_comps)
-        $("#total_price-phone").text(voip_server_price)
-        $("#total_price-all").text(total_price_all)
+        // $("#total_price-phone").text(voip_server_price)
+        // $("#total_price-all").text(total_price_all)
         
         // jQuery("#num_comps_pdf").val(num_comps)
         // jQuery("#num_vizits_pdf").val(num_vizits)
