@@ -130,17 +130,7 @@ $(document).ready(function($){
 
     scan_n_set ();
 
-    $("#calc__switcher-setup").on("click", function(){
-        
-        
-        // let priceSetupTotal = priceSetupTotal * 50
-        if ($(this).prop("checked")) {
-            $('.ob-price-result').text(priceSetup + " p")
-        } else {
-            $('.ob-price-result').text("0 p")
-        }
-        // scan_n_set ();
-    });
+   
 
     $(".calc__activator_display-phone").on("click", function(){
         let priceSupport = 2000
@@ -226,6 +216,19 @@ $(document).ready(function($){
         // jQuery("#num_vizits_pdf").val(num_vizits)
         // jQuery("#num_servers_pdf").val(num_servers)
         // jQuery("#num_rols_pdf").val(num_rols)
+
+        $("#calc__switcher-setup").on("click", function(){
+        
+        
+            let priceSetupTotal = priceSetup * 50
+            if ($(this).prop("checked")) {
+                // priceSetupTotal >= 20000
+                $('.ob-price-result').text(priceSetupTotal + " р")
+            } else {
+                $('.ob-price-result').text("0 р")
+            }
+            
+        });
         
     };
 
