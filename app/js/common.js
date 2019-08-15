@@ -97,8 +97,8 @@ $(document).ready(function($){
 
 
 
-    $(".calc__range_line").on("mousedown mouseup mouseout touchstart touchend", function() {
-        $(this).on("mousemove touchmove", function() {
+    $(".calc__range_line").on("change mousedown mouseup touchstart touchend", function() {
+        $(this).on("mousemove touchmove change", function() {
             $(this).parent().find(".calc__input_val").val($(this).val());
         })
         $(this).parent().find(".calc__input_val").val($(this).val());
@@ -200,6 +200,7 @@ $(document).ready(function($){
         // var price_vizits = hours_vizit*price_vizit
         
         $('.license__count').text(priceSetup)
+        // $('.license__count-input').val(priceSetup)
         
         // var total_price_all = total_price_comps+voip_server_price
 
@@ -218,17 +219,55 @@ $(document).ready(function($){
         // jQuery("#num_rols_pdf").val(num_rols)
 
         $("#calc__switcher-setup").on("click", function(){
-        
-        
             let priceSetupTotal = priceSetup * 50
             if ($(this).prop("checked")) {
                 // priceSetupTotal >= 20000
-                $('.ob-price-result').text(priceSetupTotal + " р")
+                if (total_price_comps >= 20000) {
+                    $('.ob-price-result').text("Бесплатно")
+                } else {
+                    $('.ob-price-result').text(priceSetupTotal + " р")
+                }
+                
             } else {
                 $('.ob-price-result').text("0 р")
             }
             
         });
+
+        // $("#price-total").bind("DOMSubtreeModified", function(){
+        //     let priceSetupTotal = priceSetup * 50
+        //     if ($("#calc__switcher-setup").prop("checked")) {
+        //         // priceSetupTotal >= 20000
+        //         if (total_price_comps >= 20000) {
+        //             $('.ob-price-result').text("Бесплатно")
+        //         } else {
+        //             $('.ob-price-result').text(priceSetupTotal + " р")
+        //         }
+                
+        //     } else {
+        //         $('.ob-price-result').text("0 р")
+        //     }
+        //     console.log(priceSetupTotal)
+        //   });
+
+
+        $(".range__input").on("change", function() {
+            let priceSetupTotal = priceSetup * 50
+            if ($("#calc__switcher-setup").prop("checked")) {
+                // priceSetupTotal >= 20000
+                if (total_price_comps >= 20000) {
+                    $('.ob-price-result').text("Бесплатно")
+                } else {
+                    $('.ob-price-result').text(priceSetupTotal + " р")
+                }
+                
+            } else {
+                $('.ob-price-result').text("0 р")
+            }
+            console.log(priceSetupTotal)
+        });
+        
+        
         
     };
 

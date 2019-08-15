@@ -22,7 +22,7 @@ gulp.task('browser-sync', function() {
 		},
 		notify: false,
 		// online: false, // Work Offline Without Internet Connection
-		// tunnel: true, tunnel: "projectname", // Demonstration page: http://projectname.localtunnel.me
+		// tunnel: true, tunnel: "office365", // Demonstration page: http://projectname.localtunnel.me
 	})
 });
 
