@@ -147,7 +147,7 @@ $(document).ready(function($){
         if($("#js-calc_val_0").val()){
             var num_comps = parseInt($("#js-calc_val_0").val())
         } else {
-            var num_comps = 5
+            var num_comps = 0
         }
         var price_comp = 100
         // if(jQuery("#js-calc_val_1").val()){var num_vizits = parseInt(jQuery("#ex3").val())}else{var num_vizits=1}
@@ -251,7 +251,7 @@ $(document).ready(function($){
         //   });
 
 
-        $(".range__input").on("change", function() {
+        $(".calc__range_line").on("change", function() {
             let priceSetupTotal = priceSetup * 50
             if ($("#calc__switcher-setup").prop("checked")) {
                 // priceSetupTotal >= 20000
@@ -267,6 +267,21 @@ $(document).ready(function($){
             console.log(priceSetupTotal)
         });
         
+        // $(".calc__input_val").on("keypress", function() {
+        //     let priceSetupTotal = priceSetup * 50
+        //     if ($("#calc__switcher-setup").prop("checked")) {
+        //         // priceSetupTotal >= 20000
+        //         if (total_price_comps >= 20000) {
+        //             $('.ob-price-result').text("Бесплатно")
+        //         } else {
+        //             $('.ob-price-result').text(priceSetupTotal + " р")
+        //         }
+                
+        //     } else {
+        //         $('.ob-price-result').text("0 р")
+        //     }
+        //     console.log(priceSetupTotal)
+        // });
         
         
     };
