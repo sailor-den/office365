@@ -108,7 +108,7 @@ $(document).ready(function($){
     
 
 
-    $(".calc__input_val").on("click change touchstart touchend", function() {
+    $(".calc__input_val").on("click mousemove touchmove change mousedown mouseup touchstart touchend", function() {
         $(this).parent().find(".calc__range_line").val($(this).val());
         // calculator();
         scan_n_set ();
@@ -147,7 +147,7 @@ $(document).ready(function($){
         if($("#js-calc_val_0").val()){
             var num_comps = parseInt($("#js-calc_val_0").val())
         } else {
-            var num_comps = 0
+            // var num_comps = 0
         }
         var price_comp = 100
         // if(jQuery("#js-calc_val_1").val()){var num_vizits = parseInt(jQuery("#ex3").val())}else{var num_vizits=1}
@@ -155,13 +155,13 @@ $(document).ready(function($){
         if($("#js-calc_val_1").val()){
             var num_servers = parseInt($("#js-calc_val_1").val())
         } else {
-            var num_servers = 0
+            // var num_servers = 0
         }
         var price_server = 200
         if($("#js-calc_val_2").val()){
             var num_virt_servers = parseInt($("#js-calc_val_2").val())
         } else {
-            var num_virt_servers = 0
+            // var num_virt_servers = 0
         }
         var price_virt_server = 300
 
@@ -200,7 +200,8 @@ $(document).ready(function($){
         // var price_vizits = hours_vizit*price_vizit
         
         $('.license__count').text(priceSetup)
-        // $('.license__count-input').val(priceSetup)
+        $('.license__count-input').val(priceSetup)
+        $('.price-total-input').val(total_price_comps)
         
         // var total_price_all = total_price_comps+voip_server_price
 
@@ -264,25 +265,42 @@ $(document).ready(function($){
             } else {
                 $('.ob-price-result').text("0 р")
             }
-            console.log(priceSetupTotal)
+            // console.log(priceSetupTotal)
         });
         
-        // $(".calc__input_val").on("keypress", function() {
+        // $(".calc__input_val").on("keypress change", function() {
         //     let priceSetupTotal = priceSetup * 50
         //     if ($("#calc__switcher-setup").prop("checked")) {
-        //         // priceSetupTotal >= 20000
+        //         
+                
         //         if (total_price_comps >= 20000) {
         //             $('.ob-price-result').text("Бесплатно")
         //         } else {
+                    
         //             $('.ob-price-result').text(priceSetupTotal + " р")
         //         }
                 
         //     } else {
         //         $('.ob-price-result').text("0 р")
         //     }
-        //     console.log(priceSetupTotal)
+            
         // });
         
+        $(".calc__input_val").on("keypress change", function() {
+            let priceSetupTotal = ($('.license__count-input').val()) * 50
+            if ($("#calc__switcher-setup").prop("checked")) {
+                if ($('.price-total-input').val() >= 20000) {
+                    $('.ob-price-result').text("Бесплатно")
+                } else {
+                    
+                    $('.ob-price-result').text(priceSetupTotal + " р")
+                }
+                
+            } else {
+                $('.ob-price-result').text("0 р")
+            }
+            console.log(priceSetupTotal)
+        });
         
     };
 
