@@ -125,7 +125,7 @@ $(document).ready(function($){
         
     // });
 
-    calculate ();
+    
 
    
     $(".calc__activator_display-phone").on("click", function(){
@@ -140,25 +140,25 @@ $(document).ready(function($){
 
     function calculate () {
         if($("#js-calc_val_0").val()){
-            var num_comps = parseInt($("#js-calc_val_0").val())
+            var obe = parseInt($("#js-calc_val_0").val())
         } else {
-            // var num_comps = 0
+            // var obe = 0
         }
-        var price_comp = 100
+        var price_obe = 100
         // if(jQuery("#js-calc_val_1").val()){var num_vizits = parseInt(jQuery("#ex3").val())}else{var num_vizits=1}
         // var price_vizit = 1000
         if($("#js-calc_val_1").val()){
-            var num_servers = parseInt($("#js-calc_val_1").val())
+            var ob = parseInt($("#js-calc_val_1").val())
         } else {
-            // var num_servers = 0
+            // var ob = 0
         }
-        var price_server = 200
+        var price_ob = 200
         if($("#js-calc_val_2").val()){
-            var num_virt_servers = parseInt($("#js-calc_val_2").val())
+            var obp = parseInt($("#js-calc_val_2").val())
         } else {
-            // var num_virt_servers = 0
+            // var obp = 0
         }
-        var price_virt_server = 300
+        var price_obp = 300
 
         // if (jQuery("#1onoffswitch").attr('checked')=='checked'){
             // var video_server_price = 2000;
@@ -177,48 +177,48 @@ $(document).ready(function($){
 
 
         // if ($("#material-switcher").attr('checked') == 'checked'){
-            let priceSetup = num_comps + num_servers + num_virt_servers
+            let priceSetup = obe + ob + obp
 
-            var price_comps = num_comps*price_comp
-            var price_servers = num_servers*price_server
-            var price_virt_servers = num_virt_servers*price_virt_server
-            var total_price_comps = price_comps+price_servers+price_virt_servers
+            var price_obes = obe*price_obe
+            var price_obs = ob*price_ob
+            var price_obps = obp*price_obp
+            var total_price_license = price_obes+price_obs+price_obps
             
         // } else {
-        //     var total_price_comps = 0
+        //     var total_price_license = 0
         //     // jQuery("#voip_server_pdf").val(0);
         //     }
 
         
         
-        // var hours_vizit = Math.ceil(num_comps/5)*num_vizits
+        // var hours_vizit = Math.ceil(obe/5)*num_vizits
         // var price_vizits = hours_vizit*price_vizit
         
         $('.license__count').text(priceSetup)
         $('.license__count-input').val(priceSetup)
-        $('.price-total-input').val(total_price_comps)
+        $('.price-total-input').val(total_price_license)
         
-        // var total_price_all = total_price_comps+voip_server_price
+        // var total_price_all = total_price_license+voip_server_price
 
-        $('#price-obe').text(price_comps + " p/мес.")
-        $('#price-ob').text(price_servers + " p/мес.")
-        $('#price-obp').text(price_virt_servers + " p/мес.")
-        $('#price-total').text(total_price_comps + " p/мес.")
+        $('#price-obe').text(price_obes + " p/мес.")
+        $('#price-ob').text(price_obs + " p/мес.")
+        $('#price-obp').text(price_obps + " p/мес.")
+        $('#price-total').text(total_price_license + " p/мес.")
                 
-        $("#total_price-comp").text(total_price_comps)
+        $("#total_price-comp").text(total_price_license)
         // $("#total_price-phone").text(voip_server_price)
         // $("#total_price-all").text(total_price_all)
         
-        // jQuery("#num_comps_pdf").val(num_comps)
+        // jQuery("#obe_pdf").val(obe)
         // jQuery("#num_vizits_pdf").val(num_vizits)
-        // jQuery("#num_servers_pdf").val(num_servers)
+        // jQuery("#ob_pdf").val(ob)
         // jQuery("#num_rols_pdf").val(num_rols)
 
         $("#calc__switcher-setup").on("click", function(){
             let priceSetupTotal = priceSetup * 50
             if ($(this).prop("checked")) {
                 // priceSetupTotal >= 20000
-                if (total_price_comps >= 20000) {
+                if (total_price_license >= 20000) {
                     $('.ob-price-result').text("Бесплатно")
                 } else {
                     $('.ob-price-result').text(priceSetupTotal + " р")
@@ -234,7 +234,7 @@ $(document).ready(function($){
         //     let priceSetupTotal = priceSetup * 50
         //     if ($("#calc__switcher-setup").prop("checked")) {
         //         // priceSetupTotal >= 20000
-        //         if (total_price_comps >= 20000) {
+        //         if (total_price_license >= 20000) {
         //             $('.ob-price-result').text("Бесплатно")
         //         } else {
         //             $('.ob-price-result').text(priceSetupTotal + " р")
@@ -251,7 +251,7 @@ $(document).ready(function($){
             let priceSetupTotal = priceSetup * 50
             if ($("#calc__switcher-setup").prop("checked")) {
                 // priceSetupTotal >= 20000
-                if (total_price_comps >= 20000) {
+                if (total_price_license >= 20000) {
                     $('.ob-price-result').text("Бесплатно")
                 } else {
                     $('.ob-price-result').text(priceSetupTotal + " р")
@@ -268,7 +268,7 @@ $(document).ready(function($){
         //     if ($("#calc__switcher-setup").prop("checked")) {
         //         
                 
-        //         if (total_price_comps >= 20000) {
+        //         if (total_price_license >= 20000) {
         //             $('.ob-price-result').text("Бесплатно")
         //         } else {
                     
@@ -299,6 +299,8 @@ $(document).ready(function($){
         
     };
 
-    
+    calculate ();
+
+
 
 });
