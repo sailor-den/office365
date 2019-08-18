@@ -95,23 +95,20 @@ $(document).ready(function($){
 
 
 
-
-
     $(".calc__range_line").on("change mousedown mouseup touchstart touchend", function() {
         $(this).on("mousemove touchmove change", function() {
             $(this).parent().find(".calc__input_val").val($(this).val());
         })
         $(this).parent().find(".calc__input_val").val($(this).val());
-        // calculator();
-        scan_n_set ();
+        
+        calculate ();
     });
     
 
-
     $(".calc__input_val").on("click mousemove touchmove change mousedown mouseup touchstart touchend", function() {
         $(this).parent().find(".calc__range_line").val($(this).val());
-        // calculator();
-        scan_n_set ();
+        
+        calculate ();
     });
 
 
@@ -123,18 +120,16 @@ $(document).ready(function($){
     //         grandma.find(".cost-phone-container").addClass("disabled");
     //     }
     //     calculator();
-    //     scan_n_set ();
+    //     calculate ();
     //     $(this).attr("checked");
         
     // });
 
-    scan_n_set ();
+    calculate ();
 
    
-
     $(".calc__activator_display-phone").on("click", function(){
         let priceSupport = 2000
-        // grandma = $(this).parents();
         if ($(this).prop("checked")) {
             $('#price-support').text(priceSupport + " p")
         } else {
@@ -143,7 +138,7 @@ $(document).ready(function($){
     });
 
 
-    function scan_n_set () {
+    function calculate () {
         if($("#js-calc_val_0").val()){
             var num_comps = parseInt($("#js-calc_val_0").val())
         } else {
