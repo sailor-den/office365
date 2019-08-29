@@ -144,7 +144,7 @@ $(document).ready(function($){
         } else {
             // var obe = 0
         }
-        var price_obe = 100
+        var price_obe = 371.25
         // if(jQuery("#js-calc_val_1").val()){var num_vizits = parseInt(jQuery("#ex3").val())}else{var num_vizits=1}
         // var price_vizit = 1000
         if($("#js-calc_val_1").val()){
@@ -152,13 +152,13 @@ $(document).ready(function($){
         } else {
             // var ob = 0
         }
-        var price_ob = 200
+        var price_ob = 612.54
         if($("#js-calc_val_2").val()){
             var obp = parseInt($("#js-calc_val_2").val())
         } else {
             // var obp = 0
         }
-        var price_obp = 300
+        var price_obp = 928.18
 
         // if (jQuery("#1onoffswitch").attr('checked')=='checked'){
             // var video_server_price = 2000;
@@ -215,7 +215,7 @@ $(document).ready(function($){
         // jQuery("#num_rols_pdf").val(num_rols)
 
         $("#calc__switcher-setup").on("click", function(){
-            let priceSetupTotal = priceSetup * 50
+            let priceSetupTotal = priceSetup * 580.00
             if ($(this).prop("checked")) {
                 // priceSetupTotal >= 20000
                 if (total_price_license >= 20000) {
@@ -248,7 +248,7 @@ $(document).ready(function($){
 
 
         $(".calc__range_line").on("change", function() {
-            let priceSetupTotal = priceSetup * 50
+            let priceSetupTotal = priceSetup * 580.00
             if ($("#calc__switcher-setup").prop("checked")) {
                 // priceSetupTotal >= 20000
                 if (total_price_license >= 20000) {
