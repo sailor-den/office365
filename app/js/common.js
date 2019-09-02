@@ -179,16 +179,16 @@ $(document).ready(function($){
         // if ($("#material-switcher").attr('checked') == 'checked'){
             let licenseCount = obe + ob + obp;
 
-            var price_obes = obe*priceObe;
-            var price_obs = ob*priceOb;
-            var price_obps = obp*priceObp;
-            var total_price_license = Math.ceil(price_obes+price_obs+price_obps)
-            // var total_price_license = (price_obes+price_obs+price_obps).toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-            // console.log(typeof(total_price_license))
-            // console.log(typeof(price_obes))
+            var priceObes = obe*priceObe;
+            var priceObs = ob*priceOb;
+            var priceObps = obp*priceObp;
+            var totalPriceLicense = Math.ceil(priceObes+priceObs+priceObps)
+            // var totalPriceLicense = (priceObes+priceObs+priceObps).toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+            // console.log(typeof(totalPriceLicense))
+            // console.log(typeof(priceObes))
             
         // } else {
-        //     var total_price_license = 0
+        //     var totalPriceLicense = 0
         //     // jQuery("#voip_server_pdf").val(0);
         //     }
 
@@ -199,16 +199,16 @@ $(document).ready(function($){
         
         $('.license__count').text(licenseCount)
         $('.license__count-input').val(licenseCount)
-        $('.price-total-input').val(total_price_license)
+        $('.price-total-input').val(totalPriceLicense)
         
-        // var total_price_all = total_price_license+voip_server_price
+        // var total_price_all = totalPriceLicense+voip_server_price
 
-        $('#price-obe').text(price_obes + " p/мес.")
-        $('#price-ob').text(price_obs + " p/мес.")
-        $('#price-obp').text(price_obps + " p/мес.")
-        $('#price-total').text(total_price_license + " p/мес.")
+        $('#price-obe').text(priceObes + " p/мес.")
+        $('#price-ob').text(priceObs + " p/мес.")
+        $('#price-obp').text(priceObps + " p/мес.")
+        $('#price-total').text(totalPriceLicense + " p/мес.")
                 
-        $("#total_price-comp").text(total_price_license)
+        $("#total_price-comp").text(totalPriceLicense)
         // $("#total_price-phone").text(voip_server_price)
         // $("#total_price-all").text(total_price_all)
         
@@ -220,8 +220,7 @@ $(document).ready(function($){
         $("#calc__switcher-setup").on("click", function(){
             let licenseCountTotal = licenseCount * 580.00
             if ($(this).prop("checked")) {
-                // priceSetupTotal >= 20000
-                if (total_price_license >= 20000) {
+                if (totalPriceLicense >= 20000) {
                     $('.ob-price-result').text("Бесплатно")
                 } else {
                     $('.ob-price-result').text(licenseCountTotal + " р")
@@ -237,7 +236,7 @@ $(document).ready(function($){
         //     let priceSetupTotal = priceSetup * 50
         //     if ($("#calc__switcher-setup").prop("checked")) {
         //         // priceSetupTotal >= 20000
-        //         if (total_price_license >= 20000) {
+        //         if (totalPriceLicense >= 20000) {
         //             $('.ob-price-result').text("Бесплатно")
         //         } else {
         //             $('.ob-price-result').text(priceSetupTotal + " р")
@@ -253,8 +252,7 @@ $(document).ready(function($){
         $(".calc__range_line").on("change", function() {
             let licenseCountTotal = licenseCount * 580.00
             if ($("#calc__switcher-setup").prop("checked")) {
-                // priceSetupTotal >= 20000
-                if (total_price_license >= 20000) {
+                if (totalPriceLicense >= 20000) {
                     $('.ob-price-result').text("Бесплатно")
                 } else {
                     $('.ob-price-result').text(licenseCountTotal + " р")
@@ -271,7 +269,7 @@ $(document).ready(function($){
         //     if ($("#calc__switcher-setup").prop("checked")) {
         //         
                 
-        //         if (total_price_license >= 20000) {
+        //         if (totalPriceLicense >= 20000) {
         //             $('.ob-price-result').text("Бесплатно")
         //         } else {
                     
