@@ -128,14 +128,14 @@ $(document).ready(function($){
     
 
    
-    $(".calc__activator_display-phone").on("click", function(){
-        let priceSupport = 2000
-        if ($(this).prop("checked")) {
-            $('#price-support').text(priceSupport + " p")
-        } else {
-            $('#price-support').text("0 p")
-        }
-    });
+    // $(".calc__activator_display-phone").on("click", function(){
+    //     let priceSupport = 2000
+    //     if ($(this).prop("checked")) {
+    //         $('#price-support').text(priceSupport + " p")
+    //     } else {
+    //         $('#price-support').text("0 p")
+    //     }
+    // });
 
 
     function calculate () {
@@ -144,7 +144,7 @@ $(document).ready(function($){
         } else {
             // var obe = 0
         }
-        var price_obe = 371.25
+        var priceObe = 371.25
         // if(jQuery("#js-calc_val_1").val()){var num_vizits = parseInt(jQuery("#ex3").val())}else{var num_vizits=1}
         // var price_vizit = 1000
         if($("#js-calc_val_1").val()){
@@ -152,13 +152,13 @@ $(document).ready(function($){
         } else {
             // var ob = 0
         }
-        var price_ob = 612.54
+        var priceOb = 612.54
         if($("#js-calc_val_2").val()){
             var obp = parseInt($("#js-calc_val_2").val())
         } else {
             // var obp = 0
         }
-        var price_obp = 928.18
+        var priceObp = 928.18
 
         // if (jQuery("#1onoffswitch").attr('checked')=='checked'){
             // var video_server_price = 2000;
@@ -177,12 +177,15 @@ $(document).ready(function($){
 
 
         // if ($("#material-switcher").attr('checked') == 'checked'){
-            let priceSetup = obe + ob + obp
+            let licenseCount = obe + ob + obp;
 
-            var price_obes = obe*price_obe
-            var price_obs = ob*price_ob
-            var price_obps = obp*price_obp
-            var total_price_license = price_obes+price_obs+price_obps
+            var price_obes = obe*priceObe;
+            var price_obs = ob*priceOb;
+            var price_obps = obp*priceObp;
+            var total_price_license = Math.ceil(price_obes+price_obs+price_obps)
+            // var total_price_license = (price_obes+price_obs+price_obps).toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+            // console.log(typeof(total_price_license))
+            // console.log(typeof(price_obes))
             
         // } else {
         //     var total_price_license = 0
@@ -194,8 +197,8 @@ $(document).ready(function($){
         // var hours_vizit = Math.ceil(obe/5)*num_vizits
         // var price_vizits = hours_vizit*price_vizit
         
-        $('.license__count').text(priceSetup)
-        $('.license__count-input').val(priceSetup)
+        $('.license__count').text(licenseCount)
+        $('.license__count-input').val(licenseCount)
         $('.price-total-input').val(total_price_license)
         
         // var total_price_all = total_price_license+voip_server_price
@@ -215,13 +218,13 @@ $(document).ready(function($){
         // jQuery("#num_rols_pdf").val(num_rols)
 
         $("#calc__switcher-setup").on("click", function(){
-            let priceSetupTotal = priceSetup * 580.00
+            let licenseCountTotal = licenseCount * 580.00
             if ($(this).prop("checked")) {
                 // priceSetupTotal >= 20000
                 if (total_price_license >= 20000) {
                     $('.ob-price-result').text("Бесплатно")
                 } else {
-                    $('.ob-price-result').text(priceSetupTotal + " р")
+                    $('.ob-price-result').text(licenseCountTotal + " р")
                 }
                 
             } else {
@@ -248,13 +251,13 @@ $(document).ready(function($){
 
 
         $(".calc__range_line").on("change", function() {
-            let priceSetupTotal = priceSetup * 580.00
+            let licenseCountTotal = licenseCount * 580.00
             if ($("#calc__switcher-setup").prop("checked")) {
                 // priceSetupTotal >= 20000
                 if (total_price_license >= 20000) {
                     $('.ob-price-result').text("Бесплатно")
                 } else {
-                    $('.ob-price-result').text(priceSetupTotal + " р")
+                    $('.ob-price-result').text(licenseCountTotal + " р")
                 }
                 
             } else {
@@ -282,19 +285,19 @@ $(document).ready(function($){
         // });
         
         $(".calc__input_val").on("keypress change", function() {
-            let priceSetupTotal = ($('.license__count-input').val()) * 50
+            let licenseCountTotal = ($('.license__count-input').val()) * 50
             if ($("#calc__switcher-setup").prop("checked")) {
                 if ($('.price-total-input').val() >= 20000) {
                     $('.ob-price-result').text("Бесплатно")
                 } else {
                     
-                    $('.ob-price-result').text(priceSetupTotal + " р")
+                    $('.ob-price-result').text(licenseCountTotal + " р")
                 }
                 
             } else {
                 $('.ob-price-result').text("0 р")
             }
-            console.log(priceSetupTotal)
+            console.log(licenseCountTotal)
         });
         
     };
