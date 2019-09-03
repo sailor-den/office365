@@ -175,20 +175,23 @@ $(document).ready(function($){
         //     // jQuery("#voip_server_pdf").val(0);
         //     }
 
+        
 
         // if ($("#material-switcher").attr('checked') == 'checked'){
             let licenseCount = obe + ob + obp;
             
             var priceObes = obe*priceObe;
-            priceObes = ((parseInt(priceObes*100))/100)
+            priceObes = ((parseInt(priceObes*100))/100);
             var priceObs = ob*priceOb;
-            priceObs = ((parseInt(priceObs*100))/100)
+            priceObs = ((parseInt(priceObs*100))/100);
             var priceObps = obp*priceObp;
-            priceObps = ((parseInt(priceObps*100))/100)
-            var totalPriceLicense = Math.ceil(priceObes+priceObs+priceObps)
-            // var totalPriceLicense = (priceObes+priceObs+priceObps).toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+            priceObps = ((parseInt(priceObps*100))/100);
+            // var totalPriceLicense = Math.ceil(priceObes+priceObs+priceObps);
+            var totalPriceLicense2 = ((parseInt((priceObes+priceObs+priceObps)*100))/100);
+            var totalPriceLicense = (priceObes+priceObs+priceObps).toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
             // console.log(typeof(totalPriceLicense))
             // console.log(typeof(priceObes))
+            console.log(totalPriceLicense2)
             
         // } else {
         //     var totalPriceLicense = 0
@@ -200,16 +203,16 @@ $(document).ready(function($){
         // var hours_vizit = Math.ceil(obe/5)*num_vizits
         // var price_vizits = hours_vizit*price_vizit
         
-        $('.license__count').text(licenseCount)
-        $('.license__count-input').val(licenseCount)
-        $('.price-total-input').val(totalPriceLicense)
+        $('.license__count').text(licenseCount);
+        $('.license__count-input').val(licenseCount);
+        $('.price-total-input').val(totalPriceLicense);
         
         // var total_price_all = totalPriceLicense+voip_server_price
 
-        $('#price-obe').text(priceObes + " p/мес.")
-        $('#price-ob').text(priceObs + " p/мес.")
-        $('#price-obp').text(priceObps + " p/мес.")
-        $('#price-total').text(totalPriceLicense + " p/мес.")
+        $('#price-obe').text(priceObes + " p/мес.");
+        $('#price-ob').text(priceObs + " p/мес.");
+        $('#price-obp').text(priceObps + " p/мес.");
+        $('#price-total').text(totalPriceLicense + " p/мес.");
                 
         $("#total_price-comp").text(totalPriceLicense)
         // $("#total_price-phone").text(voip_server_price)
@@ -221,9 +224,9 @@ $(document).ready(function($){
         // jQuery("#num_rols_pdf").val(num_rols)
 
         $("#calc__switcher-setup").on("click", function(){
-            let licenseCountTotal = licenseCount * 580.00
+            let licenseCountTotal = String(licenseCount * 580.00).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
             if ($(this).prop("checked")) {
-                if (totalPriceLicense >= 50000) {
+                if (totalPriceLicense2 >= 50000) {
                     $('.ob-price-result').text("Бесплатно")
                 } else {
                     $('.ob-price-result').text(licenseCountTotal + " р")
@@ -253,9 +256,9 @@ $(document).ready(function($){
 
 
         $(".calc__range_line").on("change", function() {
-            let licenseCountTotal = licenseCount * 580.00
+            let licenseCountTotal = String(licenseCount * 580.00).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
             if ($("#calc__switcher-setup").prop("checked")) {
-                if (totalPriceLicense >= 50000) {
+                if (totalPriceLicense2 >= 50000) {
                     $('.ob-price-result').text("Бесплатно")
                 } else {
                     $('.ob-price-result').text(licenseCountTotal + " р")
@@ -286,9 +289,9 @@ $(document).ready(function($){
         // });
         
         $(".calc__input_val").on("keypress change", function() {
-            let licenseCountTotal = ($('.license__count-input').val()) * 50
+            let licenseCountTotal = String(licenseCount * 580.00).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
             if ($("#calc__switcher-setup").prop("checked")) {
-                if ($('.price-total-input').val() >= 50000) {
+                if (totalPriceLicense2 >= 50000) {
                     $('.ob-price-result').text("Бесплатно")
                 } else {
                     
