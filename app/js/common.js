@@ -178,10 +178,13 @@ $(document).ready(function($){
 
         // if ($("#material-switcher").attr('checked') == 'checked'){
             let licenseCount = obe + ob + obp;
-
+            
             var priceObes = obe*priceObe;
+            priceObes = ((parseInt(priceObes*100))/100)
             var priceObs = ob*priceOb;
+            priceObs = ((parseInt(priceObs*100))/100)
             var priceObps = obp*priceObp;
+            priceObps = ((parseInt(priceObps*100))/100)
             var totalPriceLicense = Math.ceil(priceObes+priceObs+priceObps)
             // var totalPriceLicense = (priceObes+priceObs+priceObps).toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
             // console.log(typeof(totalPriceLicense))
@@ -220,7 +223,7 @@ $(document).ready(function($){
         $("#calc__switcher-setup").on("click", function(){
             let licenseCountTotal = licenseCount * 580.00
             if ($(this).prop("checked")) {
-                if (totalPriceLicense >= 20000) {
+                if (totalPriceLicense >= 50000) {
                     $('.ob-price-result').text("Бесплатно")
                 } else {
                     $('.ob-price-result').text(licenseCountTotal + " р")
@@ -235,8 +238,8 @@ $(document).ready(function($){
         // $("#price-total").bind("DOMSubtreeModified", function(){
         //     let priceSetupTotal = priceSetup * 50
         //     if ($("#calc__switcher-setup").prop("checked")) {
-        //         // priceSetupTotal >= 20000
-        //         if (totalPriceLicense >= 20000) {
+        //         // priceSetupTotal >= 50000
+        //         if (totalPriceLicense >= 50000) {
         //             $('.ob-price-result').text("Бесплатно")
         //         } else {
         //             $('.ob-price-result').text(priceSetupTotal + " р")
@@ -252,7 +255,7 @@ $(document).ready(function($){
         $(".calc__range_line").on("change", function() {
             let licenseCountTotal = licenseCount * 580.00
             if ($("#calc__switcher-setup").prop("checked")) {
-                if (totalPriceLicense >= 20000) {
+                if (totalPriceLicense >= 50000) {
                     $('.ob-price-result').text("Бесплатно")
                 } else {
                     $('.ob-price-result').text(licenseCountTotal + " р")
@@ -269,7 +272,7 @@ $(document).ready(function($){
         //     if ($("#calc__switcher-setup").prop("checked")) {
         //         
                 
-        //         if (totalPriceLicense >= 20000) {
+        //         if (totalPriceLicense >= 50000) {
         //             $('.ob-price-result').text("Бесплатно")
         //         } else {
                     
@@ -285,7 +288,7 @@ $(document).ready(function($){
         $(".calc__input_val").on("keypress change", function() {
             let licenseCountTotal = ($('.license__count-input').val()) * 50
             if ($("#calc__switcher-setup").prop("checked")) {
-                if ($('.price-total-input').val() >= 20000) {
+                if ($('.price-total-input').val() >= 50000) {
                     $('.ob-price-result').text("Бесплатно")
                 } else {
                     
