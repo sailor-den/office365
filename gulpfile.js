@@ -45,6 +45,7 @@ gulp.task('scripts', function() {
 		'app/libs/bootstrap-4.3.1/js/bootstrap.min.js',
 		'app/libs/maskedinput/jquery.maskedinput.min.js',
 		'app/libs/detect/detect.min.js',
+		'app/libs/numberMask/jquery.numberMask.min.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))

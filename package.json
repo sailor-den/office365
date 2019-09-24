@@ -26,5 +26,8 @@
 		"gulp-uglify-es": "^1.0.4",
 		"imagemin-mozjpeg": "^8.0.0",
 		"jquery": "^3.4.1"
+	},
+	"dependencies": {
+		"jquery-mask-plugin": "^1.14.16"
 	}
 }

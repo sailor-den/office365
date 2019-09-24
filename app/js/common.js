@@ -47,6 +47,11 @@ $(document).ready(function($){
     // Добавляем маску для поля с номера телефона
     $('#phone').mask('+7 (999) 999-99-99');
 
+    // Добавляем маску для поля ввода колличества лицензий
+    $('#js-calc_val_0').numberMask({pattern:/^-{0,1}\d*$/});
+    $('#js-calc_val_1').numberMask({pattern:/^-{0,1}\d*$/});
+    $('#js-calc_val_2').numberMask({pattern:/^-{0,1}\d*$/});
+
     // Проверяет отмечен ли чекбокс согласия
     // с обработкой персональных данных
     $('#check').on('click', function() {
@@ -93,6 +98,19 @@ $(document).ready(function($){
 
     });
 
+    // document.getElementById("js-calc_val_0").onkeydown = function(e){
+    //     if((e.which >=48 && e.which <=57)  // цифры
+    //         || (e.which >=96 && e.which <=105)  // num lock
+    //         || e.which==8 // backspace
+    //         || (e.which >=37 && e.which <=40) // стрелки
+    //        || e.which==46) // delete 
+    //     {
+    //         return true;
+    //     } else {
+    //         return false;            
+    //     }		 
+    //     }
+        
 
 
     $(".calc__range_line").on("change mousedown mouseup touchstart touchend", function() {
@@ -111,6 +129,17 @@ $(document).ready(function($){
         calculate ();
     });
 
+    // document.getElementById("js-calc_val_0").onkeypress= function(event){
+        
+    //      event= event || window.event;
+        
+    //      if (event.charCode && (event.charCode < 48 || event.charCode > 57))// проверка на event.charCode - чтобы пользователь мог нажать backspace, enter, стрелочку назад...
+        
+    //       return false;
+        
+    //     };
+
+    
 
     // $(".calc__activator_display-phone").on("click", function() {
     //     grandma = $(this).parents();
@@ -235,8 +264,11 @@ $(document).ready(function($){
             } else {
                 $('.ob-price-result').text("0 р")
             }
+            // calculate ();
             
         });
+
+        // calculate ();
 
         // $("#price-total").bind("DOMSubtreeModified", function(){
         //     let priceSetupTotal = priceSetup * 50
@@ -288,7 +320,7 @@ $(document).ready(function($){
             
         // });
         
-        $(".calc__input_val").on("keypress change", function() {
+        $(".calc__input_val").on("keyup keypress blur change", function() {
             let licenseCountTotal = String(licenseCount * 580.00).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
             if ($("#calc__switcher-setup").prop("checked")) {
                 if (totalPriceLicense2 >= 50000) {
