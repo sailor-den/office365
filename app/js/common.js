@@ -341,5 +341,8 @@ $(document).ready(function($){
     calculate ();
 
 
+    $('.header__button').on('click', function() {
+        $()
+    });
 
 });
