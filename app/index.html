@@ -608,7 +608,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form id="contactForm" action="handler.php" method="post">
+					<form id="contactForm" enctype="multipart/form-data" action="handler.php" method="post">
 						<div class="form-group">
 							<label for="company">Компания</label>
 							<input id="company" class="form-control" name="company" required type="text" placeholder="Ваша компания">
@@ -633,6 +633,8 @@
 							<input id="check" class="form-check-input" checked type="checkbox">
 							<label class="form-check-label" for="check">Я добровольно отправляю свои данные</label>
 						</div>
+						<p>Прикрепить файлы</p>
+						<input type="file" name="myfile[]" multiple id="myfile">	
 						<button id="button" class="btn btn-success" type="submit">Заказать услуги</button>
 						<div class="result">
 							<span id="answer"></span>

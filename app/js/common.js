@@ -350,55 +350,140 @@ $(document).ready(function($){
     // });
 
 
-    function() {
-        var result = []; // массив данных из калькулятора
-        var resultCeilTable = [];
-        if (($(this).data("value") == "Калькулятор обслуживания" || $(this).data("value") == "Калькулятор разовых работ") && $(this).val() != "Попробовать бесплатно") {
-          $(".calc__input_val").filter(function(index) {
-            if (!$(this).prop("disabled") && $(this).parent().parent().parent().hasClass("selected")) {
-              calcElement = $(this).data();
-              calcElement.quantity = $(this).val();
-              result.push(calcElement);
-            }
-          });
-          $(".table_main.selected").find(".js-main_factors").filter(function(index) {
-            table = $(this).data();
-            resultCeilTable.push(table);
-          });
-          if (result.length != 0) {
-            $(".order_form form h4").html("Форма отправки расчёта");
-            $(".order_form").find(".js-message").html("Укажите почту, <br/> на которую нужно отправить расчёт");
-            if ($(this).data("value") == "Калькулятор обслуживания") {
-              $(".order_form").find(".js-phone_number").prop("disabled", false);
-              $(".order_form").find(".js-name_company").prop("disabled", false);
-            } else {
-              $(".order_form").find(".js-phone_number").prop("disabled", true);
-              $(".order_form").find(".js-name_company").prop("disabled", true);
-            }
-            $(".order_form").find(".js-mail").prop("disabled", false);
-            $(".order_form").find(".js-call").attr("data-value", $(this).data("value"));
-            $(".order_form").find(".js-call").attr("onClick", $(this).data("yacont"));
-            $(".order_form").find(".js-call").val($(this).html().trim());
-            $(".order_form").addClass("show");
-            $(".wrapper").addClass("blur");
-          }
-        } else if (($(this).html()).trim() == "Попробовать бесплатно") {
-          $(".order_form").addClass("show");
-          $(".order_form").html("<form id='form' name='Demo' action='https://1cfresh.com/a/httpextreg/hs/ExternalRegistration/register' ; method='post' novalidate='novalidate'><div class='close_cross'></div><h4>Подключение 1С:ФРЕШ</h4><input name='fio' type='text' class='req' placeholder='Ваше Имя:'><input name='phone' type='text' class='req' placeholder='Ваш телефон:'><input name='email' type='text' class='req email' placeholder='E-mail:'><div id='form-error' class='form-row c-red text-center d-none'></div><div id='form-success' class='form-row text-center d-none'><b>Спасибо!</b></div><input type='button' onclick='validate(); return false;' class='button_b js-call' value='Получить бесплатный доступ'/><li>Нажимая на кнопку, Вы подтверждаете, что<br> ознакомлены с <a href='/dogovorom-oferty/' style='text-decoration: underline'>договором-оферты.</a></li><input name='promouser' value='extreg-166206-000000000000000001' type='hidden'><input name='promo' value='191' type='hidden'><input name='subid' id='subid' type='hidden'><input name='unknownErrorRedirectUrl' id='inputUnknownErrorRedirectUrl' type='hidden'><input name='userExistsErrorRedirectUrl' id='inputUserExistsErrorRedirectUrl' type='hidden'><input name='serviceUnavailableErrorRedirectUrl' id='inputServiceUnavailableErrorRedirectUrl' type='hidden'><input name='promocodeNotFoundRedirectUrl' id='inputPromocodeNotFoundRedirectUrl' type='hidden'><input name='promocodeBlockedRediretUrl' id='inputPromocodeBlockedRediretUrl' type='hidden'><input name='promocodeExpiredRedirectUrl' id='inputPromocodeExpiredRedirectUrl' type='hidden'></form><div id='popup'><div class='close_cross'></div><div class='popup-wrapper' id='popupBlock' onclick='popupClickHandler();'><!-- ОШИБКА: Ошибка соединения --><div id='popup-content-serviceUnavailableErrorRedirectUrl' class='d-none error-content'><a name='serviceUnavailableErrorRedirectUrl'></a><div id='serviceUnavailableErrorRedirectUrl'><p><strong>Произошла ошибка</strong></p><p>В данный момент наблюдаются проблемы с доступом к сайту 1Cfresh.com.</p><p>Для завершения регистрации перейдите по ссылке из письма, которое вы получили после начала регистрации или свяжитесь с нами по телефону +78126400304</p></div></div><!-- ОШИБКА: Пользователь с введенным email уже существует --><div id='popup-content-userExistsErrorRedirectUrl' class='d-none error-content'><a name='userExistsErrorRedirectUrl'></a><div id='userExistsErrorRedirectUrl'><p><strong>Произошла ошибка</strong></p><p>Вы уже начинали регистрироваться с этим электронным адресом.</p><p>Пожалуйста, используйте другой e-mail.</p><p>Или для завершения регистрации перейдите по ссылке из письма, которое вы получили после начала регистрации и свяжитесь с нами по телефону +78126400304</p></div></div><!-- ОШИБКА: Другая ошибка --><div id='popup-content-unknownErrorRedirectUrl' class='d-none error-content'><a name='unknownErrorRedirectUrl'></a><div id='unknownErrorRedirectUrl'><p><strong>Произошла ошибка</strong></p><p>В данный момент наблюдаются проблемы при регистрации.</p><p>Для завершения регистрации перейдите по ссылке из письма, которое вы получили после начала регистрации или свяжитесь с нами по телефону +78126400304</p></div></div><!-- ОШИБКА: Промокод не найден --><div id='popup-content-promocodeNotFoundRedirectUrl' class='d-none error-content'><a name='promocodeNotFoundRedirectUrl'></a><div id='promocodeNotFoundRedirectUrl'><p><strong>Произошла ошибка</strong></p><p><strong>Введён неверный ПромоКод</strong></p><p>Внимательно проверьте полученный вами ПромоКода и введите правильные символы</p></div></div><!-- ОШИБКА: Промокод заблокирован --><div id='popup-content-promocodeBlockedRediretUrl' class='d-none error-content'><a name='promocodeBlockedRediretUrl'></a><div id='promocodeBlockedRediretUrl'><p><strong>Произошла ошибка</strong></p><p><strong>ПромоКод заблокирован</strong></p></div></div><!-- ОШИБКА: Срок действия промокода истек --><div id='popup-content-promocodeExpiredRedirectUrl' class='d-none error-content'><a name='promocodeExpiredRedirectUrl'></a><div id='promocodeExpiredRedirectUrl'><p><strong>Произошла ошибка</strong></p><p><strong>Срок действия этого ПромоКода истек</strong></p></div></div></div></div><script src='/bitrix/templates/itart/js/1с-fresh.js' type='text/javascript' charset='utf-8'></script>");
-          $(".order_form").find(".js-call").attr("onClick", $(this).data("yacont"));
-        } else {
-          $(".order_form form h4").html("Форма заказа звонка");
-          $(".order_form").find(".js-message").html("Мы перезвоним и ответим <br/> на все интересующие вас вопросы");
-          $(".order_form").find(".js-phone_number").prop("disabled", false);
-          $(".order_form").find(".js-name_company").prop("disabled", true);
-          $(".order_form").find(".js-mail").prop("disabled", true);
-          $(".order_form").find(".js-call").attr("onClick", $(this).data("yacont"));
-          $(".order_form").find(".js-call").val($(this).html().trim());
-          $(".order_form").addClass("show");
-          $(".wrapper").addClass("blur");
-        }
-        reqProperty.call = $(this).data();
-        reqProperty.calc = result;
-        reqProperty.table = resultCeilTable;
-      }
+    // function() {
+    //     var result = []; // массив данных из калькулятора
+    //     var resultCeilTable = [];
+    //     if (($(this).data("value") == "Калькулятор обслуживания" || $(this).data("value") == "Калькулятор разовых работ") && $(this).val() != "Попробовать бесплатно") {
+    //       $(".calc__input_val").filter(function(index) {
+    //         if (!$(this).prop("disabled") && $(this).parent().parent().parent().hasClass("selected")) {
+    //           calcElement = $(this).data();
+    //           calcElement.quantity = $(this).val();
+    //           result.push(calcElement);
+    //         }
+    //       });
+    //       $(".table_main.selected").find(".js-main_factors").filter(function(index) {
+    //         table = $(this).data();
+    //         resultCeilTable.push(table);
+    //       });
+    //       if (result.length != 0) {
+    //         $(".order_form form h4").html("Форма отправки расчёта");
+    //         $(".order_form").find(".js-message").html("Укажите почту, <br/> на которую нужно отправить расчёт");
+    //         if ($(this).data("value") == "Калькулятор обслуживания") {
+    //           $(".order_form").find(".js-phone_number").prop("disabled", false);
+    //           $(".order_form").find(".js-name_company").prop("disabled", false);
+    //         } else {
+    //           $(".order_form").find(".js-phone_number").prop("disabled", true);
+    //           $(".order_form").find(".js-name_company").prop("disabled", true);
+    //         }
+    //         $(".order_form").find(".js-mail").prop("disabled", false);
+    //         $(".order_form").find(".js-call").attr("data-value", $(this).data("value"));
+    //         $(".order_form").find(".js-call").attr("onClick", $(this).data("yacont"));
+    //         $(".order_form").find(".js-call").val($(this).html().trim());
+    //         $(".order_form").addClass("show");
+    //         $(".wrapper").addClass("blur");
+    //       }
+    //     } else if (($(this).html()).trim() == "Попробовать бесплатно") {
+    //       $(".order_form").addClass("show");
+    //       $(".order_form").html("<form id='form' name='Demo' action='https://1cfresh.com/a/httpextreg/hs/ExternalRegistration/register' ; method='post' novalidate='novalidate'><div class='close_cross'></div><h4>Подключение 1С:ФРЕШ</h4><input name='fio' type='text' class='req' placeholder='Ваше Имя:'><input name='phone' type='text' class='req' placeholder='Ваш телефон:'><input name='email' type='text' class='req email' placeholder='E-mail:'><div id='form-error' class='form-row c-red text-center d-none'></div><div id='form-success' class='form-row text-center d-none'><b>Спасибо!</b></div><input type='button' onclick='validate(); return false;' class='button_b js-call' value='Получить бесплатный доступ'/><li>Нажимая на кнопку, Вы подтверждаете, что<br> ознакомлены с <a href='/dogovorom-oferty/' style='text-decoration: underline'>договором-оферты.</a></li><input name='promouser' value='extreg-166206-000000000000000001' type='hidden'><input name='promo' value='191' type='hidden'><input name='subid' id='subid' type='hidden'><input name='unknownErrorRedirectUrl' id='inputUnknownErrorRedirectUrl' type='hidden'><input name='userExistsErrorRedirectUrl' id='inputUserExistsErrorRedirectUrl' type='hidden'><input name='serviceUnavailableErrorRedirectUrl' id='inputServiceUnavailableErrorRedirectUrl' type='hidden'><input name='promocodeNotFoundRedirectUrl' id='inputPromocodeNotFoundRedirectUrl' type='hidden'><input name='promocodeBlockedRediretUrl' id='inputPromocodeBlockedRediretUrl' type='hidden'><input name='promocodeExpiredRedirectUrl' id='inputPromocodeExpiredRedirectUrl' type='hidden'></form><div id='popup'><div class='close_cross'></div><div class='popup-wrapper' id='popupBlock' onclick='popupClickHandler();'><!-- ОШИБКА: Ошибка соединения --><div id='popup-content-serviceUnavailableErrorRedirectUrl' class='d-none error-content'><a name='serviceUnavailableErrorRedirectUrl'></a><div id='serviceUnavailableErrorRedirectUrl'><p><strong>Произошла ошибка</strong></p><p>В данный момент наблюдаются проблемы с доступом к сайту 1Cfresh.com.</p><p>Для завершения регистрации перейдите по ссылке из письма, которое вы получили после начала регистрации или свяжитесь с нами по телефону +78126400304</p></div></div><!-- ОШИБКА: Пользователь с введенным email уже существует --><div id='popup-content-userExistsErrorRedirectUrl' class='d-none error-content'><a name='userExistsErrorRedirectUrl'></a><div id='userExistsErrorRedirectUrl'><p><strong>Произошла ошибка</strong></p><p>Вы уже начинали регистрироваться с этим электронным адресом.</p><p>Пожалуйста, используйте другой e-mail.</p><p>Или для завершения регистрации перейдите по ссылке из письма, которое вы получили после начала регистрации и свяжитесь с нами по телефону +78126400304</p></div></div><!-- ОШИБКА: Другая ошибка --><div id='popup-content-unknownErrorRedirectUrl' class='d-none error-content'><a name='unknownErrorRedirectUrl'></a><div id='unknownErrorRedirectUrl'><p><strong>Произошла ошибка</strong></p><p>В данный момент наблюдаются проблемы при регистрации.</p><p>Для завершения регистрации перейдите по ссылке из письма, которое вы получили после начала регистрации или свяжитесь с нами по телефону +78126400304</p></div></div><!-- ОШИБКА: Промокод не найден --><div id='popup-content-promocodeNotFoundRedirectUrl' class='d-none error-content'><a name='promocodeNotFoundRedirectUrl'></a><div id='promocodeNotFoundRedirectUrl'><p><strong>Произошла ошибка</strong></p><p><strong>Введён неверный ПромоКод</strong></p><p>Внимательно проверьте полученный вами ПромоКода и введите правильные символы</p></div></div><!-- ОШИБКА: Промокод заблокирован --><div id='popup-content-promocodeBlockedRediretUrl' class='d-none error-content'><a name='promocodeBlockedRediretUrl'></a><div id='promocodeBlockedRediretUrl'><p><strong>Произошла ошибка</strong></p><p><strong>ПромоКод заблокирован</strong></p></div></div><!-- ОШИБКА: Срок действия промокода истек --><div id='popup-content-promocodeExpiredRedirectUrl' class='d-none error-content'><a name='promocodeExpiredRedirectUrl'></a><div id='promocodeExpiredRedirectUrl'><p><strong>Произошла ошибка</strong></p><p><strong>Срок действия этого ПромоКода истек</strong></p></div></div></div></div><script src='/bitrix/templates/itart/js/1с-fresh.js' type='text/javascript' charset='utf-8'></script>");
+    //       $(".order_form").find(".js-call").attr("onClick", $(this).data("yacont"));
+    //     } else {
+    //       $(".order_form form h4").html("Форма заказа звонка");
+    //       $(".order_form").find(".js-message").html("Мы перезвоним и ответим <br/> на все интересующие вас вопросы");
+    //       $(".order_form").find(".js-phone_number").prop("disabled", false);
+    //       $(".order_form").find(".js-name_company").prop("disabled", true);
+    //       $(".order_form").find(".js-mail").prop("disabled", true);
+    //       $(".order_form").find(".js-call").attr("onClick", $(this).data("yacont"));
+    //       $(".order_form").find(".js-call").val($(this).html().trim());
+    //       $(".order_form").addClass("show");
+    //       $(".wrapper").addClass("blur");
+    //     }
+    //     reqProperty.call = $(this).data();
+    //     reqProperty.calc = result;
+    //     reqProperty.table = resultCeilTable;
+    //   }
+
+
+    // function() {
+    //     if ($(this).data("value")) reqProperty.call = $(this).data();
+    //     var pageTitle = $("h1").html() == undefined ? "Главная" : $("h1").html();
+    //     var tariff = $(".js-calc__header_item.selected");
+    //     tariff = tariff !== undefined && tariff.html() != "" ? tariff.html() : "Стандартный";
+    //     var nameCompany = $(this).parent().find(".js-name_company");
+    //     var phone = $(this).parent().find(".js-phone_number");
+    //     var mail = $(this).parent().find(".js-mail");
+    //     var minVal = $(".calc__sliders.selected").find(".js-cal_min_val");
+    //     $(".js-message").html("<div style='width: 200px; height: 200px; background-image: url(/bitrix/templates/itart/images/bootstrap/loading.gif); background-repeat: no-repeat; background-position: center;'></div>");
+    //     $(".order_form input").addClass("hidden");
+    //     $(".order_form li").addClass("hidden");
+    //     var recoverDefault = function() {
+    //       setTimeout("$(\".order_form input\").removeClass('hidden')", 2000);
+    //       setTimeout("$(\".order_form li\").removeClass('hidden');", 2000);
+    //     }
+    //     if ((($(this).data("value") == "Калькулятор разовых работ") &&
+    //         (!mail.prop("disabled") && mail.val().length != 0)) ||
+    //       (($(this).data("value") == "Калькулятор обслуживания") &&
+    //         (!nameCompany.prop("disabled") && nameCompany.val().length != 0) &&
+    //         (!phone.prop("disabled") && phone.val().length != 0) &&
+    //         (!mail.prop("disabled") && mail.val().length != 0))) {
+    //       $.ajax({
+    //         url: "/mail/mail.php",
+    //         data: {
+    //           pageTitle: pageTitle,
+    //           call: reqProperty.call.value,
+    //           nameCompany: nameCompany.val(),
+    //           tariff: tariff,
+    //           phone: phone.val(),
+    //           mail: mail.val(),
+    //           calc: reqProperty.calc,
+    //           table: reqProperty.table,
+    //           minPrice: minVal.data("min"),
+    //           minPriceText: minVal.html()
+    //         },
+    //         type: "POST",
+    //         success: function(data) {
+    //           if (data == "success") {
+    //             $(".js-message").html("<span style='color:green'>Ваш расчёт отправлен на почту <br/>" + mail.val() + ".</span>");
+    //             setTimeout("$(\".wrapper\").removeClass(\"blur\")", 2000);
+    //             setTimeout("$(\".order_form\").removeClass(\"show\");", 2000);
+    //           } else if (data == "not success") {
+    //             $(".js-message").html("<span style='color:red'>Введите корректный E-mail</span>");
+    //           } else {
+    //             $(".js-message").html("<span style='color:red'>Ваше сообщение не отправлено!</span>");
+    //           }
+    //           recoverDefault();
+    //         },
+    //         error: function(data) {
+    //           $(".js-message").html("<span style='color:red'>Ваш расчёт не был отрпавлен. <br/> Попробуйте ещё или свяжитесь с нами.</span>");
+    //           recoverDefault();
+    //         }
+    //       });
+    //     } else if (!phone.prop("disabled") && phone.val().length != 0) {
+    //       $.ajax({
+    //         url: "/mail/mail.php",
+    //         data: {
+    //           pageTitle: pageTitle,
+    //           call: reqProperty.call.value,
+    //           phone: phone.val()
+    //         },
+    //         type: "POST",
+    //         success: function(data) {
+    //           if (data == "success") {
+    //             $(".js-message").html("<span style='color:green'>Спасибо за обращение! <br/> В ближайшее время с Вами свяжется наш менеджер.</span>");
+    //             setTimeout("$(\".wrapper\").removeClass(\"blur\")", 2000);
+    //             setTimeout("$(\".order_form\").removeClass(\"hidden\");", 2000);
+    //           } else {
+    //             $(".js-message").html("<span style='color:red'>Ваше сообщение не отправлено!</span>");
+    //           }
+    //           recoverDefault()
+    //         },
+    //         error: function(data) {
+    //           $(".js-message").html("<span style='color:red'>Ваш расчёт не был отрпавлен. <br/> Попробуйте ещё или свяжитесь с нами.</span>");
+    //           recoverDefault()
+    //         }
+    //       });
+    //     } else {
+    //       $(".js-message").html("<span style='color:red'>Данное действие не допустимо!</span>");
+    //       recoverDefault()
+    //     }
+    //   }
 });
