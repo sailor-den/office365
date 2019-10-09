@@ -42,13 +42,13 @@ $data .= '<strong>Имя:</strong> ' . $name . '<br />';
 $data .= '<strong>Телефон:</strong> ' . $phone . '<br />';
 $data .= '<strong>Email:</strong> ' . $email . '<br />';
 $data .= '<br /><strong>Office 365 бизнес базовый:</strong> ' . $obeForm . '<br />';
-$data .= '<strong>Стоимость в месяц:</strong> ' . $priceObesForm . ' <strong>p/мес.<strong>' . '<br />';
+$data .= '<strong>Стоимость в месяц:</strong> ' . $priceObesForm . ' <strong>p/мес.</strong>' . '<br />';
 $data .= '<br/><strong>Office 365 бизнес:</strong> ' . $obForm . '<br />';
-$data .= '<strong>Стоимость в месяц:</strong> ' . $priceObsForm . ' <strong>p/мес.<strong>' . '<br />';
+$data .= '<strong>Стоимость в месяц:</strong> ' . $priceObsForm . ' <strong>p/мес.</strong>' . '<br />';
 $data .= '<br /><strong>Office 365 бизнес премиум:</strong> ' . $obpForm . '<br />';
-$data .= '<strong>Стоимость в месяц:</strong> ' . $priceObpsForm . ' <strong>p/мес.<strong>' . '<br />';
+$data .= '<strong>Стоимость в месяц:</strong> ' . $priceObpsForm . ' <strong>p/мес.</strong>' . '<br />';
 $data .= '<br /><strong>Колличество лицензий итог:</strong> ' . $licenseCountForm . '<br />';
-$data .= '<br /><strong>Стоимость в месяц итог:</strong> ' . $totalPriceLicenseForm . ' <strong>p/мес.<strong>' . '<br />';
+$data .= '<br /><strong>Стоимость в месяц итог:</strong> ' . $totalPriceLicenseForm . ' <strong>p/мес.</strong>' . '<br />';
 
 
 if($message) 
@@ -106,6 +106,8 @@ function sendEmail($pdf, $enquirydata)
     $mail->CharSet = "UTF-8";
 
 try {
+
+    $to = $_POST['email'];
     //Server settings
     $mail->SMTPDebug = false;                      // Enable verbose debug output
     $mail->isSMTP();                                            // Send using SMTP
@@ -119,7 +121,7 @@ try {
     //Recipients
     $mail->setFrom('den.obraz@yandex.ru', 'Форма заявки');
     $mail->addAddress('DPreobrazhensky@alteris.ru', 'Joe User');     // Add a recipient
-    $mail->addAddress('info@alteris.ru');               // Name is optional
+    $mail->addAddress($to);               // Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
     // $mail->addBCC('bcc@example.com');
