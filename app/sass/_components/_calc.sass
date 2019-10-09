@@ -1,9 +1,5 @@
-.calc-title-services
-    color: $black
-    margin-top: 15px
-    
 .calc
-    padding-top: 80px
+    padding-top: 100px
     padding-bottom: 80px
     font-size: 26px
     font-weight: 300
@@ -42,11 +38,17 @@
     &__btn
         margin-top: 11px
         text-align: right
-
-.cacl__result
-    color: $black
-    font-size: 16px
-    display: block
+    &__result
+        color: $black
+        font-size: 16px
+        display: block
+    &__bottom
+        display: flex
+        align-items: center
+        justify-content: space-between
+        .calc__btn
+            margin-top: 0
+  
     
 .range
     display: flex
@@ -78,112 +80,26 @@
         margin: 9px 0
         border: none
 
-.thumb
-    display: none
 
 .checkbox-container
-    position: relative
+    display: flex
+    // position: relative
     &__block
         margin-top: 70px
 
-.cost
-    // margin-left: 35px
-    .price
-        color: $black
-        font-size: 45px
-        font-weight: 300
-        display: inline-block
-    p
-    color: $black
-    font-size: 30px
-    font-weight: 300
-    &-phone-container
-        margin-top: 60px
-        margin-left: 120px
-    &-container
-        margin-left: 120px
-
-.includes
-    padding-top: 15px
-    &__title
-        margin-top: 25px
-        margin-bottom: 5px
-        font-size: 16px
-        font-weight: 700
-        color: $black
-        text-transform: uppercase
-    &__item 
-        font-size: 16px
-        color: $black
-        font-family: "Roboto", sans-serif
-        &::before
-            content: "+"
-            color: #86ce66
-            margin-right: 5px
-            font-weight: bold
-
-.order
-    background-color: #ffffff
-    padding: 35px 40px
-    color: $black
-    
-.margin-to-form
-    margin-top: -57px
-
-.btn-primary
-    background-color: $accent
-
-.disabled
-    display: none
 
 .js-cal_min_val
     color: $black
     font-size: 18px
     font-weight: 700
 
-.field_result
-    display: none
-
-.js-min_val_under_calc
-    color: $black
-    font-size: 16px
-
-.calc-office
-    cursor: pointer
-    color: $black
-    font-size: 16px
-    font-weight: 700
-    position: relative
-    top: -28px
-    right: -68px
-
-.calc-line
-    display: block
-    width: 100%
-    height: 1px
-    background-color: #170b0870
-    margin-bottom: 25px
-
-.range-office
-    justify-content: flex-end
-
-
-.cost-ob
-    padding-top: 80px
-    padding-bottom: 80px
-    font-size: 30px
-    font-weight: 300
-    color: $black
-
-.container-custom
-    max-width: 1700px
-    margin: 0 auto
 
 .price-block
     display: flex
     justify-content: space-between
     &__ob
         display: flex
+        flex-basis: 190px
         flex-direction: column
         align-items: center
         &-header
@@ -197,10 +113,7 @@
         
 .calc-service__header
     margin-top: 30px
-    
-.checkbox-container
-    display: flex
-    // margin-top: 15px
+
 
 .calc__switcher
     top: 0
@@ -212,37 +125,16 @@
 hr 
     width: 966px
 
-.cost-extra
-    display: flex
-    margin-top: 50px
-    // justify-content: space-between
-    align-items: center
-    .price-block__ob-price:first-child
-        margin-right: 196px
-        margin-left: 32px
 
-.bottom-line
-    border-bottom: 1px solid #170b0870
-    padding-bottom: 10px
-    position: relative
-    &::after
-        content: ''
-        position: absolute
-        width: 80px
-        background-color: #4698dd
-        height: 3px
-        bottom: 0
-        left: 0
 
 .calc__wrapper
     // border-color: #aeaeae
 
 .switcher-subtitle
-    width: 365px
-    font-size: 14px
+    max-width: 600px
+    font-size: 13px
     color: $black
     font-family: "Roboto", sans-serif
-    margin-bottom: 30px
 
 .license
     &-wrap
@@ -262,8 +154,10 @@ hr
     font-size: 26px
     // font-weight: 400
     text-align: center
-    
-    span 
-        // display: block
+
+
+#licenseCountForm, #obeForm, #priceObesForm, 
+#obForm, #priceObsForm, #obpForm, #priceObpsForm, #totalPriceLicenseForm
+    display: none
         
     

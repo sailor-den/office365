@@ -1,0 +1,124 @@
+/*base settings*/
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+html 
+    height: 100%
+
+body
+    height: 100%
+    background: #f3f3f3
+    font-size: 16px
+    min-width: 320px
+    position: relative
+    line-height: 1.65
+    font-family: "Roboto Condensed", sans-serif
+    overflow-x: hidden
+    color: $black
+    input, textarea
+        border: #666 1px solid
+        outline: none
+        &:focus:required:invalid
+            border-color: red
+        &:required:valid
+            border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+.wrapper
+	position: relative
+	min-height: 100%
+	overflow: hidden
+	display: flex
+	flex-direction: column
+
+.row 
+    position: relative
+
+.content 
+    height: 100%
+    flex-grow: 1
+
+.section 
+    height: 100%
+
+ul 
+	margin: 0
+	padding: 0
+	list-style: none
+
+b 
+    font-weight: bold
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 
+	font-weight: 300
+	margin: 0
+	line-height: 1.4
+	text-transform: uppercase
+
+p 
+    margin: 0
+
+.button-o
+    display: inline-block
+    border: none
+    color: #fff
+    text-decoration: none
+    background-color: $accent
+    padding: 15px 45px
+    font-size: 13px
+    text-transform: uppercase
+    font-weight: 600
+    letter-spacing: 3px
+    border-radius: 2px
+    text-align: center
+    position: relative
+    outline: none
+    transition: background-color .1s ease
+    // &::after
+    //     transition: background-color .2s ease
+    //     position: absolute
+    //     content: ''
+    //     height: 4px
+    //     bottom: 0
+    //     width: 100%
+    //     background-color: darken($accent, 50%)
+    //     opacity: .18
+    //     border-bottom-left-radius: 2px
+    //     border-bottom-right-radius: 2px
+    //     left: 0
+    &:focus, &:hover
+        text-decoration: none
+        color: #fff
+    &:hover
+        background-color: lighten($accent, 5%)
+        &::after
+            opacity: .22
+    &:active
+        background-color: darken($accent, 5%)
+        &::after
+            opacity: .32
+
+.blur 
+    filter: blur(4px)

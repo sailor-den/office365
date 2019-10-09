@@ -73,7 +73,7 @@ $(document).ready(function($){
             loader = $('#loader');
 
         $.ajax({
-            url: 'handler.php',
+            url: 'makepdf.php',
             type: 'POST',
             data: form.serialize(),
             beforeSend: function() {
@@ -333,13 +333,50 @@ $(document).ready(function($){
             } else {
                 $('.ob-price-result').text("0 р")
             }
-            console.log(licenseCountTotal)
+            // console.log(licenseCountTotal)
+        });
+
+        $('.header__button').on('click', function() {
+        
+            let obeForm = $('#js-calc_val_0').val();
+            $('#obeForm').val(obeForm);
+            // console.log(obeForm);
+    
+            $('#priceObesForm').val(priceObes);
+            console.log(priceObes);
+            
+            let obForm = $('#js-calc_val_1').val();
+            $('#obForm').val(obForm);
+            // console.log(obForm);
+    
+            $('#priceObsForm').val(priceObs);
+    
+            let obpForm = $('#js-calc_val_2').val();
+            $('#obpForm').val(obpForm);
+            // console.log(obpForm);
+    
+            $('#priceObpsForm').val(priceObps);
+    
+            // let obeFormPrice = $('#price-obe');
+            // console.log(obeFormPrice[0]);
+    
+            let licenseCountForm = $('.license__count-input').val();
+            $('#licenseCountForm').val(licenseCountForm);
+    
+            // console.log(obeForm);
+            // console.log(licenseCountForm);
+
+            $('#totalPriceLicenseForm').val(totalPriceLicense);
+            // console.log(totalPriceLicense);
+            
         });
         
     };
 
     calculate ();
 
+
+    
 
     // $('.header__button').on('click', function() {
     //     $('.wrapper').addClass('blur');
