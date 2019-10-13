@@ -1,12 +1,12 @@
 $(document).ready(function($){
 
-    var user = detect.parse(navigator.userAgent);
-    console.log(user.browser.family);
+    // var user = detect.parse(navigator.userAgent);
+    // console.log(user.browser.family);
 
-    if (user.browser.family === "IE" || user.browser.family === "Edge")  {
-        document.write('Please change browser on Chrome, Firefox or Opera. Not IE and Edge.');
-        // alert('Please change browser');   
-      }
+    // if (user.browser.family === "IE" || user.browser.family === "Edge")  {
+    //     document.write('Please change browser on Chrome, Firefox or Opera. Not IE and Edge.');
+    //     // alert('Please change browser');   
+    //   }
 
     $(window).scroll(function(){
         let st = $(this).scrollTop();
@@ -169,7 +169,7 @@ $(document).ready(function($){
 
     function calculate () {
         if($("#js-calc_val_0").val()){
-            var obe = parseInt($("#js-calc_val_0").val())
+            var obe = parseInt($("#js-calc_val_0").val());
         } else {
             // var obe = 0
         }
@@ -177,13 +177,13 @@ $(document).ready(function($){
         // if(jQuery("#js-calc_val_1").val()){var num_vizits = parseInt(jQuery("#ex3").val())}else{var num_vizits=1}
         // var price_vizit = 1000
         if($("#js-calc_val_1").val()){
-            var ob = parseInt($("#js-calc_val_1").val())
+            var ob = parseInt($("#js-calc_val_1").val());
         } else {
             // var ob = 0
         }
         var priceOb = 612.54
         if($("#js-calc_val_2").val()){
-            var obp = parseInt($("#js-calc_val_2").val())
+            var obp = parseInt($("#js-calc_val_2").val());
         } else {
             // var obp = 0
         }
