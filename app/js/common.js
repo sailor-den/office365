@@ -1,12 +1,14 @@
 $(document).ready(function($){
 
-    // var user = detect.parse(navigator.userAgent);
-    // console.log(user.browser.family);
+    var user = detect.parse(navigator.userAgent);
+    console.log(user.browser.family);
 
+    if (user.browser.family === "IE")  {
     // if (user.browser.family === "IE" || user.browser.family === "Edge")  {
-    //     document.write('Please change browser on Chrome, Firefox or Opera. Not IE and Edge.');
-    //     // alert('Please change browser');   
-    //   }
+        document.write('Please change browser on Edge, Chrome, Firefox, Opera. Not IE.');
+        // document.write('Please change browser on Chrome, Firefox or Opera. Not IE and Edge.');
+        // alert('Please change browser');   
+      }
 
     $(window).scroll(function(){
         let st = $(this).scrollTop();
