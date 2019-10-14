@@ -289,7 +289,7 @@ $(document).ready(function($){
         //   });
 
 
-        $(".calc__range_line").on("change", function() {
+        $(".calc__range_line").on("change mousedown mouseup touchstart touchend", function() {
             let licenseCountTotal = String(licenseCount * 580.00).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
             if ($("#calc__switcher-setup").prop("checked")) {
                 if (totalPriceLicense2 >= 50000) {
