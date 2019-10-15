@@ -90,12 +90,13 @@ function sendEmail($pdf, $enquirydata)
 {
 
     $emailbody = '';
-    $emailbody .= '<h1>Заявка от ' . $enquirydata['Компания'] . '<h1>';
+    $emailbody .= '<h1 style="font-size:20px;">Заявка от ' . $enquirydata['Компания'] . '<h1>';
 
     foreach ($enquirydata as $title => $data)
     {
 
-        $emailbody .= '<strong> '. $title . '</strong>: ' . $data . '<br />';
+        // $emailbody .=  '<div style="font-size:20px;">' . '<strong> '. $title . '</strong>: ' . $data . '</div>' . '<br />';
+        $emailbody .=  '<strong style="font-size:20px;">'. $title . ': </strong>' . '<strong style="font-size:20px;">'. $data . '</strong>' . '<br />';
 
     }
 
