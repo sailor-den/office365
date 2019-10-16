@@ -97,8 +97,40 @@
     
     
 @media screen and (max-width: 768px)
-    .header__nav
-        display: none
+    .header
+        &__logo
+            z-index: 400
+        &__nav
+            display: none
+            padding-top: 50px
+            text-align: center
+            background-color: #f2f2f2
+            position: fixed
+            width: 100vw
+            height: 100vh
+            top: 0
+            right: 0
+            left: 0
+            bottom: 0
+            z-index: 300
+            margin-right: 0
+        &__list
+            display: flex
+            flex-direction: column
+        &__item
+            font-size: 19px
+            margin-bottom: 20px
+            &:after 
+                content: ''
+                height: 4px
+                width: 4px
+                background-color: $accent
+                border-radius: 50%
+                text-align: center
+                display: block
+                margin: 13px auto
+        &__link
+            color: $accent
     .mobile__btn
         display: flex
     .banner__subtitle

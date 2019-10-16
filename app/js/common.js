@@ -46,6 +46,17 @@ $(document).ready(function($){
         } 
     });
 
+    $('.header__mobile ').on('click', function(e){
+        e.preventDefault();
+        $(this).toggleClass('is-active');
+        $('.header__nav').slideToggle(700);
+    });
+
+    $('.header__link').on('click', function(){
+        $('.header__nav').fadeOut(600);
+        $('.hamburger').toggleClass('is-active');
+    });
+
     // Добавляем маску для поля с номера телефона
     $('#phone').mask('+7 (999) 999-99-99');
 
