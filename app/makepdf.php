@@ -89,19 +89,23 @@ sendEmail($pdf, $enquirydata);
 function sendEmail($pdf, $enquirydata)
 {
 
-    $emailbody = '';
-    $emailbody .= '<h1 style="font-size:20px;">Заявка от ' . $enquirydata['Компания'] . '<h1>';
+    $emailbody = '<h1 style="font-size:18px;">Спасибо за обращение в компанию Альтерис.<h1>';
+    $emailbody .= '<h1 style="font-size:18px;">Ваш расчет в приложении к письму.<h1>';
+
+
+
+    $emailbody2 = '';
+    $emailbody2 .= '<h1 style="font-size:20px;">Заявка от ' . $enquirydata['Компания'] . '<h1>';
 
     foreach ($enquirydata as $title => $data)
     {
 
         // $emailbody .=  '<div style="font-size:20px;">' . '<strong> '. $title . '</strong>: ' . $data . '</div>' . '<br />';
-        $emailbody .=  '<strong style="font-size:20px;">'. $title . ': </strong>' . '<strong style="font-size:20px;">'. $data . '</strong>' . '<br />';
+        $emailbody2 .=  '<strong style="font-size:18px;">'. $title . ': </strong>' . '<strong style="font-size:20px;">'. $data . '</strong>' . '<br />';
 
     }
 
-
-
+    
 
     $mail = new PHPMailer(true);
     $mail->CharSet = "UTF-8";
@@ -120,8 +124,8 @@ try {
     $mail->Port       = 465;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('den.obraz@yandex.ru', 'Форма заявки');
-    $mail->addAddress('DPreobrazhensky@alteris.ru', 'Joe User');     // Add a recipient
+    $mail->setFrom('den.obraz@yandex.ru', 'Альтерис');
+    // $mail->addAddress('DPreobrazhensky@alteris.ru', 'Joe User');     // Add a recipient
     $mail->addAddress($to);               // Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
@@ -137,11 +141,19 @@ try {
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Заявка от ' . $enquirydata['Компания'];
+    $mail->Subject = 'Заявка на покупку лицензий Office365';
     $mail->Body    = $emailbody;
     $mail->AltBody = strip_tags($emailbody);
 
     $mail->send();
+
+    $mail->ClearAddresses();
+
+    $mail->AddAddress('DPreobrazhensky@alteris.ru');
+    // $mail->addCC('info@alteris.ru');
+    $mail->Subject = 'Заявка от ' . $enquirydata['Компания'] . ' на покупку лицензий Office365';
+    $mail->Body = $emailbody2;
+    $mail->Send();
      
     // header('Location:thanks.php?name=' . $enquirydata['Name']); // Send thank you page
 
