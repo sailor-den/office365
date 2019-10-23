@@ -49,11 +49,11 @@ $(document).ready(function($){
     $('.hamburger ').on('click', function(e){
         e.preventDefault();
         $(this).toggleClass('is-active');
-        $('.header__nav').slideToggle(700);
+        $('.header__nav--mobile').slideToggle(700);
     });
 
-    $('.header__item').on('click', function(){
-        $('.header__nav').fadeOut(600);
+    $('.header__item--mobile').on('click', function(){
+        $('.header__nav--mobile').fadeOut(600);
         $('.hamburger').toggleClass('is-active');
     });
 
