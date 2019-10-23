@@ -66,6 +66,29 @@ $(document).ready(function($){
     $('#js-calc_val_1').numberMask({pattern:/^-{0,1}\d*$/});
     $('#js-calc_val_2').numberMask({pattern:/^-{0,1}\d*$/});
 
+
+
+    // get all number fields
+    var numInputs = document.querySelectorAll('input[type="number"]');
+
+    // Loop through the collection and call addListener on each element
+    Array.prototype.forEach.call(numInputs, addListener); 
+
+
+    function addListener(elm,index){
+    elm.setAttribute('min', 0);  // set the min attribute on each field
+    
+    elm.addEventListener('keypress', function(e){  // add listener to each field 
+        var key = !isNaN(e.charCode) ? e.charCode : e.keyCode;
+        str = String.fromCharCode(key); 
+        if (str.localeCompare('-') === 0){
+        event.preventDefault();
+        }
+        
+    });
+    
+    };
+
     // Проверяет отмечен ли чекбокс согласия
     // с обработкой персональных данных
     $('#check').on('click', function() {
