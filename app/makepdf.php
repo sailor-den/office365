@@ -25,6 +25,9 @@ $priceObpsForm = $_POST['priceObpsForm'];
 $licenseCountForm = $_POST['licenseCountForm'];
 $totalPriceLicenseForm = $_POST['totalPriceLicenseForm'];
 
+$orderNumber = round(microtime(true) * 1000);
+
+
 
 
 // Create new PDF instance
@@ -72,9 +75,9 @@ $enquirydata = [
     'Имя' => $name,
     'Телефон' => $phone,
     'Email' => $email,
-    'Сообщение' => $message
-
-
+    'Сообщение' => $message,
+    'Заявка № ' => $orderNumber
+    
 ];
 
 
@@ -86,10 +89,15 @@ sendEmail($pdf, $enquirydata);
 
 
 
+
+
 function sendEmail($pdf, $enquirydata)
 {
+    // $Uid = uniqid();
+    
 
     $emailbody = '<h1 style="font-size:18px;">Спасибо за обращение в компанию Альтерис.<h1>';
+    $emailbody .= '<h1 style="font-size:18px;">Ваша заявка № ' . $GLOBALS['orderNumber'] .'<h1>';
     $emailbody .= '<h1 style="font-size:18px;">Ваш расчет в приложении к письму.<h1>';
 
 
