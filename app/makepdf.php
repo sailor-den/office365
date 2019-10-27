@@ -25,7 +25,8 @@ $priceObpsForm = $_POST['priceObpsForm'];
 $licenseCountForm = $_POST['licenseCountForm'];
 $totalPriceLicenseForm = $_POST['totalPriceLicenseForm'];
 
-$orderNumber = round(microtime(true) * 1000);
+$orderNumber = number_format(substr(round(microtime(true) * 1000), 4), 0, '', '-');
+// $orderNumber = round(microtime(true) * 1000);
 
 
 
@@ -71,12 +72,12 @@ $pdf = $mpdf->Output('', 'S');
 // Grab enquiry data
 $enquirydata = [
 
+    'Заявка № ' => $orderNumber,
     'Компания' => $company,
     'Имя' => $name,
     'Телефон' => $phone,
     'Email' => $email,
-    'Сообщение' => $message,
-    'Заявка № ' => $orderNumber
+    'Сообщение' => $message
     
 ];
 
@@ -96,9 +97,9 @@ function sendEmail($pdf, $enquirydata)
     // $Uid = uniqid();
     
 
-    $emailbody = '<h1 style="font-size:18px;">Спасибо за обращение в компанию Альтерис.<h1>';
-    $emailbody .= '<h1 style="font-size:18px;">Ваша заявка № ' . $GLOBALS['orderNumber'] .'<h1>';
-    $emailbody .= '<h1 style="font-size:18px;">Ваш расчет в приложении к письму.<h1>';
+    $emailbody = '<h1 style="font-size:16px;">Спасибо за обращение в компанию Альтерис.<h1>';
+    $emailbody .= '<h1 style="font-size:16px;">Ваша заявка № ' . $GLOBALS['orderNumber'] .'<h1>';
+    $emailbody .= '<h1 style="font-size:16px;">Ваш расчет в приложении к письму.<h1>';
 
 
 
@@ -109,7 +110,7 @@ function sendEmail($pdf, $enquirydata)
     {
 
         // $emailbody .=  '<div style="font-size:20px;">' . '<strong> '. $title . '</strong>: ' . $data . '</div>' . '<br />';
-        $emailbody2 .=  '<strong style="font-size:18px;">'. $title . ': </strong>' . '<strong style="font-size:20px;">'. $data . '</strong>' . '<br />';
+        $emailbody2 .=  '<strong style="font-size:16px;">'. $title . ': </strong>' . '<strong style="font-size:16px;">'. $data . '</strong>' . '<br />';
 
     }
 
