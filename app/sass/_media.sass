@@ -196,15 +196,37 @@
     .calc__title
         font-size: 20px
     
-
+// Стили для IE
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) 
     .products__item-para
         margin-bottom: 130px
-    // .m-b
-    //     margin-bottom: 21px
-   
-
+    .license__count
+        margin-right: 0
+    hr 
+        margin-top: 80px
+    .price-block__ob-price
+        margin-bottom: 85px
+    .license-wrap
+        margin-top: 73px
+    .checkbox-container__block
+        margin-top: 108px
     
+   
+// Стили для Edge
+@supports (-ms-ime-align:auto)
+    .license__count
+        margin-right: 0
+    hr 
+        margin-top: 45px
+    .license-wrap
+        margin-top: 30px
+
+
+// Стили для Mozilla    
+@-moz-document url-prefix()
+    .license-wrap
+        margin-top: 43px
+
     
 
 
