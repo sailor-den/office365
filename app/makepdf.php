@@ -158,8 +158,8 @@ try {
 
     $mail->ClearAddresses();
 
-    $mail->AddAddress('DPreobrazhensky@alteris.ru');
-    // $mail->addCC('info@alteris.ru');
+    $mail->AddAddress('info@alteris.ru');
+    $mail->addCC('DPreobrazhensky@alteris.ru');
     $mail->Subject = 'Заявка от ' . $enquirydata['Компания'] . ' на покупку лицензий Office365';
     $mail->Body = $emailbody2;
     $mail->Send();

@@ -198,7 +198,7 @@ $(document).ready(function($){
         
         
         $('.license__count').html(licenseCount);
-        // $('.license__count-input').val(licenseCount);
+        $('.license__count-input').val(licenseCount);
         // $('.price-total-input').val(totalPriceLicense);
         $('#price-obe').html(priceObes + " p/мес.");
         $('#price-ob').html(priceObs + " p/мес.");
@@ -283,8 +283,10 @@ $(document).ready(function($){
             $('#obpForm').val(obpForm);
     
             $('#priceObpsForm').val(priceObps);
+            
     
             var licenseCountForm = $('.license__count-input').val();
+            console.log(licenseCountForm);
             $('#licenseCountForm').val(licenseCountForm);
 
             $('#totalPriceLicenseForm').val(totalPriceLicense);
