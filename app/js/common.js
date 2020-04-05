@@ -268,6 +268,8 @@ $(document).ready(function($){
         });
 
         $('.header__button').on('click', function() {
+
+            document.body.style.overflow = 'hidden';
         
             var obeForm = $('#js-calc_val_0').val();
             $('#obeForm').val(obeForm);
@@ -291,6 +293,14 @@ $(document).ready(function($){
 
             $('#totalPriceLicenseForm').val(totalPriceLicense);
             
+        });
+
+        $('.close').on('click', function(){
+            document.body.style.overflow = '';
+        });
+
+        $('.modal').on('click', function(){
+            document.body.style.overflow = '';
         });
         
     };
