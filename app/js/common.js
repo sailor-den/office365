@@ -172,13 +172,13 @@ $(document).ready(function($){
     function calculate () {
         
         var obe = parseInt($("#js-calc_val_0").val());
-        var priceObe = 371.25;
+        var priceObe = 374.63;
 
         var ob = parseInt($("#js-calc_val_1").val());
-        var priceOb = 612.54;
+        var priceOb = 618.10;
         
         var obp = parseInt($("#js-calc_val_2").val());
-        var priceObp = 928.18;
+        var priceObp = 936.62;
 
        
         var licenseCount = obe + ob + obp;
@@ -208,7 +208,7 @@ $(document).ready(function($){
         
         // По клику запускаем расчет суммы настройки
         $("#calc__switcher-setup").on("click", function(){
-            var setupPrice = String(licenseCount * 580.00).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+            var setupPrice = String(licenseCount * 650.00).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
             if ($(this).prop("checked")) {
                 if (totalPriceLicense2 >= 50000) {
                     $('.ob-price-result').html("Бесплатно");
@@ -225,7 +225,7 @@ $(document).ready(function($){
 
         // Собираем данные из лайна делаем пересчет суммы настройки
         $(".calc__range_line").on("mousemove touchmove change", function() {
-            var setupPrice = String(licenseCount * 580.00).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+            var setupPrice = String(licenseCount * 650.00).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
             if ($("#calc__switcher-setup").prop("checked")) {
                 if (totalPriceLicense2 >= 50000) {
                     $('.ob-price-result').html("Бесплатно");
@@ -240,7 +240,7 @@ $(document).ready(function($){
         
 
         // Расчет суммы настройки
-        var setupPrice = String(licenseCount * 580.00).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+        var setupPrice = String(licenseCount * 650.00).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
             if ($("#calc__switcher-setup").prop("checked")) {
                 if (totalPriceLicense2 >= 50000) {
                     $('.ob-price-result').html("Бесплатно");
@@ -254,7 +254,7 @@ $(document).ready(function($){
         
         // Пересчет суммы настройки из инпута    
         $(".calc__input_val").on("input change", function() {
-            var setupPrice = String(licenseCount * 580.00).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+            var setupPrice = String(licenseCount * 650.00).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
             if ($("#calc__switcher-setup").prop("checked")) {
                 if (totalPriceLicense2 >= 50000) {
                     $('.ob-price-result').html("Бесплатно");
