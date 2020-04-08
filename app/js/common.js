@@ -189,6 +189,9 @@ $(document).ready(function($){
         var priceObs = ob*priceOb;
         priceObs = ((parseInt(priceObs*100))/100);
 
+        var priceObs2 = ob*priceOb;
+        priceObs2 = priceObs2.toFixed(2);
+
         var priceObps = obp*priceObp;
         priceObps = ((parseInt(priceObps*100))/100);
 
@@ -201,7 +204,7 @@ $(document).ready(function($){
         $('.license__count-input').val(licenseCount);
         // $('.price-total-input').val(totalPriceLicense);
         $('#price-obe').html(priceObes + " p/мес.");
-        $('#price-ob').html(priceObs + " p/мес.");
+        $('#price-ob').html(priceObs2 + " p/мес.");
         $('#price-obp').html(priceObps + " p/мес.");
         $('#price-total').html(totalPriceLicense + " p/мес.");
         $("#total_price-comp").html(totalPriceLicense);
