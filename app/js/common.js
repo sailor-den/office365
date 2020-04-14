@@ -180,6 +180,7 @@ $(document).ready(function($){
         var obp = parseInt($("#js-calc_val_2").val());
         var priceObp = 936.62;
 
+
        
         var licenseCount = obe + ob + obp;
         
