@@ -277,7 +277,7 @@ $(document).ready(function($){
 
         $('.header__button').on('click', function() {
 
-            document.body.style.overflow = 'hidden';
+            // document.body.style.overflow = 'hidden';
         
             var obeForm = $('#js-calc_val_0').val();
             $('#obeForm').val(obeForm);
@@ -303,15 +303,36 @@ $(document).ready(function($){
             
         });
 
-        $('.close').on('click', function(){
-            document.body.style.overflow = '';
-        });
-
-        $('.modal').on('click', function(){
-            document.body.style.overflow = '';
-        });
+        
         
     };
+
+    // // $('.modal-dialog').on('click', function (e){
+    // //     e.stopPropagation();
+    // // });
+
+    // // $('.close').on('click', function(){
+    // //     document.body.style.overflow = '';
+    // //     // e.stopPropagation();
+    // // });
+
+    // $('#exampleModal').on('click', function(e){
+    //     e.stopPropagation();
+    //     document.body.style.overflow = '';
+    //     // e.stopImmediatePropagation();
+       
+    // });
+
+    // $('.modal-content').on('click', function (e){
+    //     // document.body.style.overflow = 'hidden';
+    //     // e.stopImmediatePropagation();
+    //     e.stopPropagation();
+    // });
+    
+
+    // $('.close').on('click', function(){
+    //     e.stopPropagation();
+    // });
 
     calculate ();
 
