@@ -172,13 +172,13 @@ $(document).ready(function($){
     function calculate () {
         
         var obe = parseInt($("#js-calc_val_0").val());
-        var priceObe = 374.63;
+        var priceObe = 312.50;
 
         var ob = parseInt($("#js-calc_val_1").val());
-        var priceOb = 618.10;
+        var priceOb = 781.30;
         
         var obp = parseInt($("#js-calc_val_2").val());
-        var priceObp = 936.62;
+        var priceObp = 1250.00;
 
         var install = 650.00;
 
@@ -192,7 +192,7 @@ $(document).ready(function($){
         priceObs = ((parseInt(priceObs*100))/100);
 
         var priceObs2 = ob*priceOb;
-        priceObs2 = priceObs2.toFixed(2);
+        priceObs2 = priceObs2.toFixed(2);// два знака после запятой, возращает строку
 
         var priceObps = obp*priceObp;
         priceObps = ((parseInt(priceObps*100))/100);
@@ -206,7 +206,7 @@ $(document).ready(function($){
         $('.license__count-input').val(licenseCount);
         // $('.price-total-input').val(totalPriceLicense);
         $('#price-obe').html(priceObes + " p/мес.");
-        $('#price-ob').html(priceObs2 + " p/мес.");
+        $('#price-ob').html(priceObs + " p/мес.");
         $('#price-obp').html(priceObps + " p/мес.");
         $('#price-total').html(totalPriceLicense + " p/мес.");
         $("#total_price-comp").html(totalPriceLicense);
