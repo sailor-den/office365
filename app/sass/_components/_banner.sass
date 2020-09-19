@@ -16,7 +16,7 @@
         background-size: cover
         background-repeat: no-repeat
         overflow: hidden
-        // z-index: 0
+        // z-index: 1
         transform-style: inherit
         width: 100vw
     &__text
@@ -26,6 +26,11 @@
     &__title
         color: $text
         font-size: 50px
+        // z-index: 10
+        // position: relative
+        img 
+            // z-index: 10
+            max-width: 336px
     &__subtitle
         color: $text
         text-transform: uppercase
